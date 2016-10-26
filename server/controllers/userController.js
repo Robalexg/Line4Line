@@ -1,3 +1,4 @@
+
 const db = require('../models/config')
 const User = require('../models/user')
 
@@ -32,6 +33,19 @@ module.exports = {
         const err = new Error({error: 'This username is already taken'})
         res.send(err)
       }
+    })
+  },
+
+  score: (req, res) => {
+    const username =  req.body.username
+    const score = req.body.score
+    User.findOneAndUpdate({username: username}, {$set:{score: score}}, {new: true})
+    .then((user) =>{
+      return res.status(201).send('score updated')
+    })
+    .catch((err) =>{
+      console.log('this is a score error', err)
+      return res.status(500).send('our bad')
     })
   },
 

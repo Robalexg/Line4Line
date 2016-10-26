@@ -69,7 +69,10 @@ body {
   margin: 10px;
   padding: 10px;
   float: left;
-  vertical-align: middle;
+}
+
+img{
+  border-radius: 50%;
 }
 
 .lineForm{
@@ -77,7 +80,7 @@ body {
 }
 
 .lineInput{
-  float: right;
+  float: left;
   width: 80%;
   height: 50px;
   margin: 10px auto;
@@ -129,7 +132,7 @@ body {
 
 .storyNames {
   display: inline-block;
-  width: 50%;
+  width: 20%;
 }
 
 .numberOfUsers {
@@ -137,14 +140,57 @@ body {
   width: 20%;
 }
 
+.leaderbutton {
+  display: inline-block;
+  float: right;
+  width: 20%;
+}
+
 .toggleDisplayLink{
   text-align: right;
   display: inline-block;
-  width: 25%;
+  width: 15%;
+}
+
+#imgsize{
+  height: 50px;
+  width: 50px;
 }
 a:hover {
   color: #999 !important;
 }
+
+.scoreWrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.playerAvi {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 10%;
+}
+
+.playerName {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 25%;
+  margin: auto;
+}
+
+.playerScore {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+  padding-left: 5%;
+  margin: auto;
+}
+
 .openStoryWrap {
   background-color: white;
   color: black;

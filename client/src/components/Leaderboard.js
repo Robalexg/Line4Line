@@ -1,36 +1,23 @@
 import React from 'react'
 
-class LeaderBoard extends React.Component{
+const LeaderBoard = (props) => {
 
+  
 
-  render(){
-    return(
-      <div id='board'>
-        <table>
-          <tr>
-            <th>Player</th>
-            <th>Score</th>
-          </tr>
-          <tr>
-            <td>Christina</td>
-            <td>739</td>
-          </tr>
-          <tr>
-            <td>Robert</td>
-            <td>908</td>
-          </tr>
-          <tr>
-            <td>Tulasi</td>
-            <td>1000</td>
-          </tr>
-          <tr>
-            <td>Kendrick</td>
-            <td>768</td>
-          </tr>
-          </table>
-      </div>
-    )
-  }
+return(
+  <div className='leaderwrapper'>
+    <div className='scoreWrap'>
+      <div className="playerAvi">Player</div>
+      <div className="scoreHeader">Score</div>
+    </div>
+    <div className='scoreWrap'>
+        <div className="playerAvi"><img src={props.user.profileImage} id='imgsize'></img></div>
+        <div className="playerName"><span className="center">{props.user.name}</span></div>
+        <div className="playerScore"><span className="center">{props.user.score}</span></div>
+    </div>
+  </div>
+)
+  
 }
 
 export default LeaderBoard

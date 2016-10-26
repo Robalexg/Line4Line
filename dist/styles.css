@@ -171,16 +171,14 @@ a:hover {
 }
 
 .playerAvi {
-  font-size: 1.2em;
   display: inline-block;
-  width: 10%;
+  width: 5%;
 }
 
 .playerName {
   font-size: 1.2em;
   display: inline-block;
   width: 25%;
-  margin: auto;
 }
 
 .playerScore {
@@ -188,9 +186,14 @@ a:hover {
   text-align: right;
   width: 10%;
   padding-left: 5%;
-  margin: auto;
 }
 
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+  width: 37%;
+  padding-left: 5%;
+}
 .openStoryWrap {
   background-color: white;
   color: black;

@@ -5,12 +5,14 @@ import LeaderBoard from './Leaderboard'
 
 
 class Lobby extends React.Component {
+
   constructor (props) {
     super(props); 
     this.state = {
       allStories: [],
       openStories: [],
-      completeStories: [], 
+      completeStories: [],
+      users: [], 
       displayComplete: false,
       displayLeader: false
     }
@@ -35,13 +37,14 @@ class Lobby extends React.Component {
     })   
 
     $.get('/user')
-    .then(users => {
-      console.log('Got users: ', users);
-        var userName = users.name;
-        var userAvi =  users.profileImage
+    .then(user => {
+      var usArray = [user]
+      console.log('Got users: ', usArray);
+        var userName = user.name;
+        var userAvi =  user.profileImage
+        var userScore = user.score
       this.setState({
-        username: userName,
-        useravi: userAvi,
+       users: usArray
       })
     })
   }
@@ -60,7 +63,7 @@ class Lobby extends React.Component {
 
   render () {
     var displayButtonText = this.state.displayComplete ? 'Show Open' : 'Show Complete'
-    var displayLeaderText = this.state.displayLeader ? 'Close Leaders' : 'Show Leaders' 
+    var displayLeaderText = this.state.displayLeader ? 'Close Leaderboard' : 'Show Leaderboard' 
     return (
       <div>
         <Accordion />
@@ -85,15 +88,16 @@ class Lobby extends React.Component {
             
           }
           {
-            this.state.displayLeader ? <div className='scoreWrap'>
-          <div className="playerAvi"><img src={this.state.useravi} id='imgsize'></img></div>
-          <div className="playerName">{this.state.username}</div>
-          <div className="playerScore">739</div>
-          </div>
-            
+            this.state.displayLeader ? 
+            this.state.users.map((user, i) =>
+              <LeaderBoard user={user} key={i}/>
+            )
+          // <div className='scoreWrap'>
+          // <div className="playerAvi"><img src={this.state.useravi} id='imgsize'></img></div>
+          // <div className="playerName">{this.state.username}</div>
+          // <div className="playerScore">{this.state.userscore}</div>
+          // </div>
             : null 
-
-            
           }
 
         

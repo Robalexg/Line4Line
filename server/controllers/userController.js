@@ -8,7 +8,8 @@ module.exports = {
   const user = {
     id: req.user.facebookId,
     name: req.user.name,
-    profileImage: req.user.profilePic
+    profileImage: req.user.profilePic,
+    score: 788
   }
   res.send(user)
 },

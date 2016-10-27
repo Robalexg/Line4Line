@@ -16,7 +16,9 @@ router.route('/stories').get(stories.getAllStories)
 
 router.route('/user').get(isAuthed, users.get)
 
-router.route('/score').post(isAuthed, users.score)
+// router.route('/score').post(isAuthed, users.score)
+
+router.route('/score').get(isAuthed, users.getScores)
 
 router.route('/stories/:id').get(isAuthed, stories.joinStory, stories.getOneStory)
 

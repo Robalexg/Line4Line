@@ -9,7 +9,7 @@ module.exports = {
     id: req.user.facebookId,
     name: req.user.name,
     profileImage: req.user.profilePic,
-    score: 788
+    score: req.user.score
   }
   res.send(user)
 },
@@ -39,22 +39,25 @@ module.exports = {
 
   score: (req, res) => {
     const username =  req.body.username
-    const userscore = req.body.score
-    User.findOne({username: username})
+    const score = req.body.score
+    User.findOneAndUpdate({username: username}, {$set:{score: score}}, {new: true})
     .then((user) =>{
-     User.select('score')
-    })
-    .then((score) =>{
-      if(score > userscore){
-       User.update({score: score})
-       .then(()=>{
-        res.status(401).send('score has been updated')
-       })
-      }
+      return res.status(201).send('score updated')
     })
     .catch((err) =>{
-      console.log('this is a post score err', err);
-      res.status(500).send('our bad')
+      console.log('this is a score error', err)
+      return res.status(500).send('our bad')
+    })
+  },
+
+  getScores: (req, res) => {
+    User.find()
+    .then((users)=>{
+      console.log('this worked getScores', users)
+      res.status(201).send(users)
+    })
+    .catch((err) =>{
+      console.log('this getScores didnt work', err)
     })
   },
 

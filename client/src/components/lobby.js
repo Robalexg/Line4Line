@@ -36,15 +36,12 @@ class Lobby extends React.Component {
       })
     })   
 
-    $.get('/user')
-    .then(user => {
-      var usArray = [user]
-      console.log('Got users: ', usArray);
-        var userName = user.name;
-        var userAvi =  user.profileImage
-        var userScore = user.score
+    $.get('/score')
+    .then(users => {
+      console.log('Got users: ', users.profilePic);
+      console.log('Got users: ', users);
       this.setState({
-       users: usArray
+       users: users
       })
     })
   }
@@ -92,11 +89,7 @@ class Lobby extends React.Component {
             this.state.users.map((user, i) =>
               <LeaderBoard user={user} key={i}/>
             )
-          // <div className='scoreWrap'>
-          // <div className="playerAvi"><img src={this.state.useravi} id='imgsize'></img></div>
-          // <div className="playerName">{this.state.username}</div>
-          // <div className="playerScore">{this.state.userscore}</div>
-          // </div>
+          
             : null 
           }
 

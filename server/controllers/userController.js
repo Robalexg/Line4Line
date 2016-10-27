@@ -39,14 +39,22 @@ module.exports = {
 
   score: (req, res) => {
     const username =  req.body.username
-    const score = req.body.score
-    User.findOneAndUpdate({username: username}, {$set:{score: score}}, {new: true})
+    const userscore = req.body.score
+    User.findOne({username: username})
     .then((user) =>{
-      return res.status(201).send('score updated')
+     User.select('score')
+    })
+    .then((score) =>{
+      if(score > userscore){
+       User.update({score: score})
+       .then(()=>{
+        res.status(401).send('score has been updated')
+       })
+      }
     })
     .catch((err) =>{
-      console.log('this is a score error', err)
-      return res.status(500).send('our bad')
+      console.log('this is a post score err', err);
+      res.status(500).send('our bad')
     })
   },
 

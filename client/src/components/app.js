@@ -52,7 +52,6 @@ class App extends React.Component {
         this.state.currentUser ? 
         <Router history={hashHistory}>
           <Route path='/' component={Lobby} />
-          <Route path='/leaderboard' component ={LeaderBoard} />
           <Route path='/stories/:id' component={Story} user={this.state.currentUser} />
         </Router> 
         : 

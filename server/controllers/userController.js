@@ -39,19 +39,33 @@ module.exports = {
 
   score: (req, res) => {
     const username =  req.body.username
-    const score = req.body.score
-    User.findOneAndUpdate({username: username}, {$set:{score: score}}, {new: true})
+    const userscore = req.body.score
+    User.findOne({username: username}
     .then((user) =>{
-      return res.status(201).send('score updated')
+      User.find({score})
+      .then((score) =>{
+        if(score < userscore){
+          User.update({score: userscore})
+          .then(() =>{
+            return res.status(201).send('score updated')
+          })
+          .catch((err) => {
+            res.status(201).send('this is not the highest score')
+          })
+        }
+      })
+      .catch((err) =>{
+        console.log('this is a user score error inside the find', err)
+      })
     })
     .catch((err) =>{
       console.log('this is a score error', err)
       return res.status(500).send('our bad')
-    })
+    }))
   },
 
   getScores: (req, res) => {
-    User.find()
+    User.find().sort({score:-1})
     .then((users)=>{
       console.log('this worked getScores', users)
       res.status(201).send(users)

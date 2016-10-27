@@ -2,6 +2,7 @@ import React from 'react'
 import OpenStory from './OpenStory'
 import Accordion from './Accordion'
 import LeaderBoard from './Leaderboard'
+import CurrentUsers from './CurrentUsers'
 
 
 class Lobby extends React.Component {
@@ -38,7 +39,6 @@ class Lobby extends React.Component {
 
     $.get('/score')
     .then(users => {
-      console.log('Got users: ', users.profilePic);
       console.log('Got users: ', users);
       this.setState({
        users: users
@@ -92,9 +92,9 @@ class Lobby extends React.Component {
           
             : null 
           }
-
-        
-        
+        </div>
+        <div id="users">
+        <CurrentUsers />
         </div>
       </div>
     )

@@ -72,3 +72,20 @@ a:hover {
   padding-left: 5%;
 }
 
+#users {
+  float:right;
+  height: 100%;
+  width: 20%
+}
+
+.curuseravi {
+  display: inline-block;
+  width: 5%;
+}
+
+.curusername {
+  float:right;
+  font-size: .7em;
+  display: inline-block;
+  width: 10%;
+}

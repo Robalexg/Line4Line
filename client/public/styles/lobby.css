@@ -1,6 +1,5 @@
 .lobby {
   text-align: left;
-  padding: 5px;
 }
 
 .lobbyLabels {
@@ -19,7 +18,6 @@
 
 .leaderbutton {
   display: inline-block;
-  float: right;
   width: 20%;
 }
 
@@ -73,19 +71,56 @@ a:hover {
 }
 
 #users {
-  float:right;
+  float: left;
   height: 100%;
   width: 20%
 }
 
 .curuseravi {
   display: inline-block;
-  width: 5%;
+  width: 40%;
 }
 
 .curusername {
-  float:right;
+  margin:right 15%;
   font-size: .7em;
   display: inline-block;
   width: 10%;
+}
+
+.userwrap {
+  float:left;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.currentavi{
+  float:right;
+  margin:auto;
+}
+
+.currentname{
+  margin:auto;
+}
+
+.name{
+  text-align: center;
+}
+
+.currentuser{
+  margin:auto;
+  height: 40%;
+ border-width: 2px;
+ border-bottom-width:2px;
+ border-bottom-color:black;
+ border-bottom-style: solid;
+}
+
+.loggedin{
+  margin:auto;
+  margin-top:10%;
+}
+
+.leaderwrapper{
+  margin-left:15%;
 }

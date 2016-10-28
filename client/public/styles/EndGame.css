@@ -3,6 +3,7 @@ require("css!./stylesheet.css")
 .gameleader{
   float: right;
   width: 100%;
+  margin-top:30%;
 }
 
 .gamescorewrap {
@@ -18,7 +19,7 @@ require("css!./stylesheet.css")
 .gameplayeravi {
   display: inline-block;
   width: 5%;
-  margin-left: -38%;
+  margin-left: -88%;
 }
 
 .gamescoreheader {
@@ -30,6 +31,20 @@ require("css!./stylesheet.css")
 .gameplayername {
     font-size: 1.2em;
     display: inline-block;
-    width: 32%;
 }
 
+.gamewinner {
+  background: black;
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}

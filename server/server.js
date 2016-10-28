@@ -11,11 +11,13 @@ const router           = require('./routes/routes')
 const User             = require('./models/user')
 const stories          = require('./controllers/storyController')
 const charles          = require('./secretsecrets')
-
 const port             = process.env.PORT || 8081
-
 var http = require('http').Server(app)
-var io = require('./socket.js').listen(http)
+var io = require('socket.io').listen(http)
+var socket = require("./socket")
+
+socket(io)
+
 
 passport.serializeUser(function (user, done) {
   console.log(user)

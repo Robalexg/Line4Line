@@ -5,6 +5,9 @@ const GameWinner = (props) =>{
 
 	return(
 		  <div className='gameleader'>
+		  	<div className='gameoverhead'>
+		  		<GameOver />
+		  	</div>
 		    <div className='gamescorewrap'>
 		      <div>Game Stats</div>
 		    </div>

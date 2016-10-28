@@ -4,6 +4,8 @@ import RealLobby from './reallobby'
 import Login from './login'
 import EndGame from './EndGame'
 import NavBar from './NavBar'
+import socket from '../../socket'
+
 
 
 class App extends React.Component {
@@ -24,6 +26,7 @@ class App extends React.Component {
       this.setState({
         currentUser: user
       })
+      socket.emit("signedIn",user)
     })
     .catch(err => {
       console.log('App.js - No user is signed in: ', err)
@@ -37,7 +40,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log('app user',this.state.currentUser)
     return (
       <div>
         <NavBar

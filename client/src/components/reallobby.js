@@ -2,7 +2,7 @@ import React from 'react'
 import LeaderBoard from './Leaderboard'
 import UserPanel from './UserPanel'
 import GameRoom from './GameRoom'
-
+import socket from '../../socket'
 
 class RealLobby extends React.Component {
 
@@ -14,12 +14,12 @@ class RealLobby extends React.Component {
   }
 
   componentDidMount () {
-   $.get('/user')
-      .then(user => {
-        console.log('this is the returned get user', user)
-        this.name = user.name
-        this.avi = user.profileImage
-      })
+    socket.on("getUsers",function(users){
+      this.setState({users:users})
+      console.log("Current Users Online:",users)
+    }.bind(this))
+
+    socket.emit("inLobby",true)
 
     $.get('/score')
     .then(users => {
@@ -28,6 +28,12 @@ class RealLobby extends React.Component {
        users: users
       })
     })
+  }
+
+  clicked(e){
+    var room = e.target.id
+    console.log(room)
+    socket.emit("createRoom",room)
   }
 
   render () {
@@ -42,7 +48,7 @@ class RealLobby extends React.Component {
               <LeaderBoard user={user} key={i}/>)
           } 
           </div>
-          <GameRoom /> 
+          <GameRoom onClick={this.clicked.bind(this)}/> 
         </div>
           
       </div>

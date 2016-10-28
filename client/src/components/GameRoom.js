@@ -5,12 +5,12 @@ import MusicRoom from './MusicRoom'
 
 const GameRoom = (props) =>{
 
+
 	return(
 		<div className="gamewrapper">
-		<SpeechRoom />
-		<MusicRoom />
-		<MixedRoom />
-			
+		<SpeechRoom onClick={props.onClick.bind(this)}/>
+		<MusicRoom onClick={props.onClick.bind(this)}/>
+		<MixedRoom onClick={props.onClick.bind(this)}/>
 		</div> 
 	)
 

@@ -2,14 +2,13 @@ import React from 'react'
 
 const SpeechRoom = (props) =>{
 
-	return(
-		<div className="speechroom">
-			<a href="" className="gamebutton">
+  return(
+    <div className="speechroom">
+      <a id="speech"onClick={props.onClick.bind(this)}className="gamebutton">
       Play in the Speech Room
     </a>
-		</div> 
-	)
-
+    </div> 
+  )
 }
 
 export default SpeechRoom

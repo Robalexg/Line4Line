@@ -58,70 +58,6 @@ body {
   color: #3b5998;
   background-color: white;
   border: 3px solid #3b5998;
-}.lineContainer{
-  display: table;
-  margin: 0px auto;
-  width: 70%;
-}
-
-.userLine{
-  width: auto;
-  height: 55px;
-  margin: 10px;
-  padding: 10px;
-  float: left;
-}
-
-img{
-  border-radius: 50%;
-}
-
-.lineForm{
-  margin: 0px auto;
-}
-
-.lineInput{
-  float: left;
-  width: 80%;
-  height: 50px;
-  margin: 10px auto;
-  padding: 10px;
-  border: none;
-  border-bottom: solid 5px white;
-  transition: border 0.3s;
-  font-size: 18px;
-  font-weight: 800;
-  background-color: black;
-  color: white;
-}
-
-.lineInput::placeholder {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.lineInput:focus,
- .lineInput.focus {
-  border-bottom: solid 5px white;
-  outline: none;
-}.storyContainer{
-  color: white;
-  display: table;
-  background-color: black;
-  border-radius: 20px;
-  margin: auto ;
-  box-shadow: 10px 10px 0px #d7d7d7;
-  height: auto;
-  width: 90%;
-  padding-bottom: 100px;
-}
-
-.title {
-  padding-top: 60px;
-  text-align: center;
-  font-family: helvetica;
-  border: 3px;
-  font-size: 50px;
 }require("css!./stylesheet.css")
 
 .lobby {
@@ -130,11 +66,6 @@ img{
 
 .lobbyLabels {
   padding: 0px 15px 0px 15px;
-}
-
-.storyNames {
-  display: inline-block;
-  width: 20%;
 }
 
 .numberOfUsers {
@@ -174,6 +105,13 @@ a:hover {
 .playerAvi {
   display: inline-block;
   width: 5%;
+  margin-left: -30%;
+}
+
+.scoreAvi {
+  display: inline-block;
+  width: 5%;
+  float:left;
 }
 
 .playerName {
@@ -204,6 +142,7 @@ a:hover {
 
 .curuseravi {
   display: inline-block;
+  float:left;
   width: 40%;
 }
 
@@ -236,10 +175,10 @@ a:hover {
 .currentuser{
   margin:auto;
   height: 40%;
- border-width: 2px;
- border-bottom-width:2px;
- border-bottom-color:black;
- border-bottom-style: solid;
+  border-width: 2px;
+  border-bottom-width:2px;
+  border-bottom-color:black;
+  border-bottom-style: solid;
 }
 
 .loggedin{
@@ -248,13 +187,15 @@ a:hover {
 }
 
 .leaderwrapper{
-  margin-left:75%;
+  float: right;
+  width: 25%;
 }
 
 .gamewrapper{
-  margin-left:15%;
+  margin-left:25%;
   margin-right:25%;
   height: 1000px;
+  padding: 10px;
 }
 
 .mixedgame {
@@ -270,7 +211,9 @@ a:hover {
   background-size: 100%;
   background-repeat: no-repeat;
   height:33%;
-  width:100%
+  width:100%;
+  text-align: center;
+  vertical-align: center;
 }
 
 .musicroom {
@@ -279,35 +222,23 @@ a:hover {
   background-repeat: no-repeat;
   height:33%;
   width:100%
-}.openStoryWrap {
-  background-color: white;
-  color: black;
-  border: solid 1px #d7d7d7;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 3px 3px 0px #d7d7d7;
 }
 
-.openStoryTitle {
-  font-size: 1.2em;
-  display: inline-block;
-  width: 55%;
-}
-
-.openStoryUsers {
-  font-size: 1.2em;
-  display: inline-block;
-  width: 10%
-}
-
-.openStoryJoinWrap {
-  display: inline-block;
-  text-align: right;
-  width: 30%;
-  padding-left: 5%;
-}
-.signupWrap {
+.gamebutton {
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+  font-size: 1em;
+  font-weight: 800;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+  transition: ease-in-out 150ms;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}.signupWrap {
   background-color: white;
   padding: 15px;
   border-radius: 5px;
@@ -328,70 +259,6 @@ a:hover {
   width: 200px;
   font-size: 1.3em;
   margin: 0px 10px 0px 10px;
-}.createStoryWrap {
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px #d7d7d7;
-  box-shadow: 3px 3px 0px #d7d7d7;
-}
-
-.createStoryInput {
-  border: solid black 3px;
-  border-radius: 6px;
-  height: 50px;
-  font-size: 1.3em;
-  margin: auto;
-  display: block;
-  text-align: center;
-}
-
-.createTitleInput {
-  width: 400px;
-}
-
-.createNumberInput {
-  width: 60px;
-}
-
-.createButtonWrap {
-  width: 30%;
-  margin: 10px auto;
-}.hide {
-  overflow: hidden;
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-.show {
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  max-height: 1000px;
-  overflow: hidden;
-}
-
-.toggleButtonWrap {
-  width: 300px;
-  margin: 30px auto 30px auto;
 }.navbarWrap {
   color: white;
   height: 80px;
@@ -428,4 +295,38 @@ a:hover {
 a:active {
   text-decoration: none;
   color: white;
+}require("css!./stylesheet.css")
+
+.gameleader{
+  float: right;
+  width: 100%;
 }
+
+.gamescorewrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -38%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+    width: 32%;
+}
+

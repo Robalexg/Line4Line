@@ -5,7 +5,10 @@ const LeaderBoard = (props) => {
 return(
   <div className='leaderwrapper'>
     <div className='scoreWrap'>
-      <div className="playerAvi">Player</div>
+      <div>High Scores</div>
+    </div>
+    <div className='scoreWrap'>
+      <div className="scoreAvi">Player</div>
       <div className="scoreHeader">Score</div>
     </div>
     <div className='scoreWrap'>

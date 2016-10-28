@@ -4,15 +4,13 @@ import UserPanel from './UserPanel'
 import GameRoom from './GameRoom'
 
 
-class Lobby extends React.Component {
+class RealLobby extends React.Component {
 
   constructor (props) {
     super(props); 
     this.state = {
       users: [], 
-      displayLeader: false
     }
-  this.toggleLeader = this.toggleLeader.bind(this);
   }
 
   componentDidMount () {
@@ -32,14 +30,7 @@ class Lobby extends React.Component {
     })
   }
 
-  toggleLeader(){
-    this.setState({
-      displayLeader: !this.state.displayLeader
-    })
-  }
-
   render () {
-    var displayLeaderText = this.state.displayLeader ? 'Close Leaderboard' : 'Show Leaderboard' 
     return (
       <div>
         <div className='lobby'>
@@ -47,15 +38,10 @@ class Lobby extends React.Component {
             <div id="users">
             <UserPanel name={this.name} avi={this.avi}/>
             </div>
-            <h4 className="leaderbutton"><a onClick={this.toggleLeader}>{displayLeaderText}</a></h4>
-          </div>
-          {
-            this.state.displayLeader ? 
-            this.state.users.map((user, i) =>
-              <LeaderBoard user={user} key={i}/>
-            )
-            : null 
+          {this.state.users.map((user, i) =>
+              <LeaderBoard user={user} key={i}/>)
           } 
+          </div>
           <GameRoom /> 
         </div>
           
@@ -64,4 +50,4 @@ class Lobby extends React.Component {
   }
 }
 
-export default Lobby
+export default RealLobby

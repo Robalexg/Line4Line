@@ -8,11 +8,6 @@ require("css!./stylesheet.css")
   padding: 0px 15px 0px 15px;
 }
 
-.storyNames {
-  display: inline-block;
-  width: 20%;
-}
-
 .numberOfUsers {
   display: inline-block;
   width: 20%;
@@ -50,6 +45,13 @@ a:hover {
 .playerAvi {
   display: inline-block;
   width: 5%;
+  margin-left: -30%;
+}
+
+.scoreAvi {
+  display: inline-block;
+  width: 5%;
+  float:left;
 }
 
 .playerName {
@@ -80,6 +82,7 @@ a:hover {
 
 .curuseravi {
   display: inline-block;
+  float:left;
   width: 40%;
 }
 
@@ -112,10 +115,10 @@ a:hover {
 .currentuser{
   margin:auto;
   height: 40%;
- border-width: 2px;
- border-bottom-width:2px;
- border-bottom-color:black;
- border-bottom-style: solid;
+  border-width: 2px;
+  border-bottom-width:2px;
+  border-bottom-color:black;
+  border-bottom-style: solid;
 }
 
 .loggedin{
@@ -124,13 +127,15 @@ a:hover {
 }
 
 .leaderwrapper{
-  margin-left:75%;
+  float: right;
+  width: 25%;
 }
 
 .gamewrapper{
-  margin-left:15%;
+  margin-left:25%;
   margin-right:25%;
   height: 1000px;
+  padding: 10px;
 }
 
 .mixedgame {
@@ -146,7 +151,9 @@ a:hover {
   background-size: 100%;
   background-repeat: no-repeat;
   height:33%;
-  width:100%
+  width:100%;
+  text-align: center;
+  vertical-align: center;
 }
 
 .musicroom {
@@ -155,4 +162,20 @@ a:hover {
   background-repeat: no-repeat;
   height:33%;
   width:100%
+}
+
+.gamebutton {
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+  font-size: 1em;
+  font-weight: 800;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+  transition: ease-in-out 150ms;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

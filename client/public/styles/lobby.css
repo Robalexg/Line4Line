@@ -1,6 +1,7 @@
 .lobby {
   text-align: left;
-  padding: 5px;
+  padding: 5px; 
+
 }
 
 .lobbyLabels {
@@ -24,4 +25,11 @@
 }
 a:hover {
   color: #999 !important;
+}
+
+
+#Theme{
+
+width: 50%;
+  
 }

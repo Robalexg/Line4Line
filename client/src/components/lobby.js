@@ -1,6 +1,7 @@
 import React from 'react'
 import LeaderBoard from './Leaderboard'
 import UserPanel from './UserPanel'
+import GameRoom from './GameRoom'
 
 
 class Lobby extends React.Component {
@@ -46,8 +47,6 @@ class Lobby extends React.Component {
             <div id="users">
             <UserPanel name={this.name} avi={this.avi}/>
             </div>
-            <h4 className="storyNames">Story Name</h4>
-            <h4 className="numberOfUsers">Number of users</h4>
             <h4 className="leaderbutton"><a onClick={this.toggleLeader}>{displayLeaderText}</a></h4>
           </div>
           {
@@ -56,8 +55,10 @@ class Lobby extends React.Component {
               <LeaderBoard user={user} key={i}/>
             )
             : null 
-          }
+          } 
+          <GameRoom /> 
         </div>
+          
       </div>
     )
   }

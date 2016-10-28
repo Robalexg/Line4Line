@@ -2,6 +2,8 @@ require("css!./stylesheet.css")
 
 .lobby {
   text-align: left;
+  height: 98vh;
+  width: 98vw;
 }
 
 .lobbyLabels {
@@ -102,6 +104,7 @@ a:hover {
 .currentavi{
   float:right;
   margin:auto;
+  padding: 10px;
 }
 
 .currentname{
@@ -134,8 +137,10 @@ a:hover {
 .gamewrapper{
   margin-left:25%;
   margin-right:25%;
-  height: 1000px;
+  height: 100%;
   padding: 10px;
+   height: 98vh;
+ 
 }
 
 .mixedgame {
@@ -152,8 +157,6 @@ a:hover {
   background-repeat: no-repeat;
   height:33%;
   width:100%;
-  text-align: center;
-  vertical-align: center;
 }
 
 .musicroom {

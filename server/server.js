@@ -10,7 +10,6 @@ const morgan           = require('morgan')
 const router           = require('./routes/routes')
 const User             = require('./models/user')
 const stories          = require('./controllers/storyController')
-const charles          = require('./secretsecrets')
 const port             = process.env.PORT || 8081
 var http = require('http').Server(app)
 var io = require('socket.io').listen(http)
@@ -29,8 +28,8 @@ passport.deserializeUser(function (obj, done) {
 })
 
 passport.use(new FacebookStrategy({
-    clientID          : charles.appId,
-    clientSecret      : charles.appSecret,
+    clientID          : process.env.appId,
+    clientSecret      : process.env.appSecret,
     callbackURL       : "/auth/facebook/return",
     passReqToCallback : true,
 

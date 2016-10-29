@@ -1,5 +1,4 @@
 var users = require("./controllers/userController")
-const socketio = require('socket.io'
 var connections = []
 var users = []
 var gameData = {
@@ -260,8 +259,8 @@ var startTime = 0;
 
 
 
-module.exports = function (http) {
-  io = socketio.listen(http)
+module.exports = function (io) {
+  
   io.sockets.on("connection",function(socket){
     connections.push(socket)
     console.log(" %s user connected",connections.length);

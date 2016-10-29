@@ -14,9 +14,10 @@ const port             = process.env.PORT || 8081
 // const charles          = require('./secretsecrets')
 const MongoStore = require('connect-mongo')(session);
 var http = require('http').Server(app)
-var io = require("./socket").listen(http)
+var io = require('socket.io').listen(http)
+var socket = require("./socket")
 
-
+socket(io)
 
 
 passport.serializeUser(function (user, done) {

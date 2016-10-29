@@ -10,12 +10,15 @@ const morgan           = require('morgan')
 const router           = require('./routes/routes')
 const User             = require('./models/user')
 const stories          = require('./controllers/storyController')
-const charles          = require('./secretsecrets')
-
 const port             = process.env.PORT || 8081
-
+const charles          = require('./secretsecrets')
+const MongoStore = require('connect-mongo')(session);
 var http = require('http').Server(app)
-var io = require('./socket.js').listen(http)
+var io = require('socket.io').listen(http)
+var socket = require("./socket")
+
+socket(io)
+
 
 passport.serializeUser(function (user, done) {
   console.log(user)
@@ -26,9 +29,16 @@ passport.deserializeUser(function (obj, done) {
   done(null,obj)
 })
 
+// app.use(session({
+//     secret: 'foo',
+//     store: new MongoStore({ url: 'mongodb://heroku_3p151kcj:7rulu53hu64jb1euj339uvtarv@ds137267.mlab.com:37267/heroku_3p151kcj' }),
+//      resave: true,
+//   saveUninitialized: true
+// }));
+
 passport.use(new FacebookStrategy({
-    clientID          : charles.appId,
-    clientSecret      : charles.appSecret,
+    clientID          : process.env.appId || charles.appId, 
+    clientSecret      : process.env.appSecret || charles.appSecret, 
     callbackURL       : "/auth/facebook/return",
     passReqToCallback : true,
 
@@ -76,7 +86,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.use(session({
-  secret: charles.secret,
+  secret: 'dogs',
   resave: true,
   saveUninitialized: true
 }));

@@ -1,24 +1,6 @@
 import React from 'react'
 
-const CreateStory = (props) => {
-
-  const createStory = (e) => {
-    e.preventDefault()
-    const newStory = {}
-    newStory.title = document.getElementById('createTitle').value
-    newStory.numberUsers = document.getElementById('createNUsers').value
-    $.ajax({
-      type: 'POST',
-      url:'/stories', 
-      data: newStory, 
-      dataType: 'json',
-      success: function(res){
-        console.log('~~~',res)
-        window.location = res.redirect
-      }
-    })
-  }
-
+class Theme extends React.Component {
   return (
     <div className="createStoryWrap">
       <h3>A super creative title</h3>
@@ -36,6 +18,9 @@ const CreateStory = (props) => {
       </form>
     </div>
   )
+
+
 }
 
-export default CreateStory
+
+export default Theme

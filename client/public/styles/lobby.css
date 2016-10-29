@@ -1,15 +1,14 @@
+require("css!./stylesheet.css")
+
 .lobby {
   text-align: left;
-  padding: 5px;
+  height: 98vh;
+  width: 98vw;
+  padding: 5px; 
 }
 
 .lobbyLabels {
   padding: 0px 15px 0px 15px;
-}
-
-.storyNames {
-  display: inline-block;
-  width: 50%;
 }
 
 .numberOfUsers {
@@ -17,11 +16,388 @@
   width: 20%;
 }
 
+.leaderbutton {
+  display: inline-block;
+  width: 20%;
+}
+
 .toggleDisplayLink{
   text-align: right;
   display: inline-block;
-  width: 25%;
+  width: 15%;
+}
+
+#imgsize{
+  height: 50px;
+  width: 50px;
 }
 a:hover {
   color: #999 !important;
+}
+
+.scoreWrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.playerAvi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -30%;
+}
+
+.scoreAvi {
+  display: inline-block;
+  width: 5%;
+  float:left;
+}
+
+.playerName {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 45%;
+}
+
+.playerScore {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+  padding-left: 5%;
+}
+
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+  width: 60%;
+  padding-left: 5%;
+}
+
+#users {
+  float: left;
+  height: 100%;
+  width: 20%
+}
+
+.curuseravi {
+  display: inline-block;
+  float:left;
+  width: 40%;
+}
+
+#curuserimg {
+  height:40px;
+  width: 40px
+}
+
+.curusername {
+  font-size: .7em;
+  display: inline-block;
+  padding: 10px;
+  margin-left: -50%;
+}
+
+.onlineuser {
+    height: 45px;
+    padding: 10px;
+}
+
+.onlineuser {
+    height: 45px;
+    padding: 10px;
+}
+.userwrap {
+  float:left;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.currentavi{
+  float:right;
+  margin:auto;
+  padding: 10px;
+}
+
+.scoreWrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.playerAvi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -30%;
+}
+
+.scoreAvi {
+  display: inline-block;
+  width: 5%;
+  float:left;
+}
+
+.playerName {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 45%;
+}
+
+.playerScore {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+  padding-left: 5%;
+}
+
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+  width: 60%;
+  padding-left: 5%;
+}
+
+#users {
+  float: left;
+  height: 100%;
+  width: 20%
+}
+
+.curuseravi {
+  display: inline-block;
+  float:left;
+  width: 40%;
+}
+
+.curusername {
+  margin:right 15%;
+  font-size: .7em;
+  display: inline-block;
+  width: 10%;
+}
+
+.userwrap {
+  float:left;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.currentavi{
+  float:right;
+  margin:auto;
+}
+
+.currentname{
+  margin:auto;
+}
+
+.name{
+  text-align: center;
+}
+
+.currentuser{
+  margin:auto;
+  height: 40%;
+  border-width: 2px;
+  border-bottom-width:2px;
+  border-bottom-color:black;
+  border-bottom-style: solid;
+}
+
+.loggedin{
+  margin:auto;
+  margin-top:10%;
+}
+
+.leaderwrapper{
+  float: right;
+  width: 25%;
+}
+
+.gamewrapper{
+  margin-left:25%;
+  margin-right:25%;
+  height: 100%;
+  padding: 10px;
+   height: 98vh;
+}
+
+.mixedgame {
+  background-image: url('https://cdn.shopify.com/s/files/1/0013/7332/products/5_bc439036-4f21-47ff-9fbb-bf57faf5c18c_1024x1024.jpg?v=1419048096');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%
+}
+ 
+.speechroom {
+  background-image: url('http://wpmedia.news.nationalpost.com/2015/08/republican-debate-2015.jpg?quality=65&strip=all');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%;
+}
+
+.musicroom {
+  background-image: url('http://wallpaper.zone/img/5008582.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%
+}
+
+.gamebutton {
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+  font-size: 1em;
+  font-weight: 800;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+  transition: ease-in-out 150ms;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gameleader{
+  float: right;
+  width: 100%;
+  margin-top:30%;
+}
+
+.gamescorewrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -88%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.gamewinner {
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}
+
+#Theme{
+width: 50%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left:20%;
+  margin-right:35%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.tableHead{
+  background-color: #808080;
+}
+
+.gameleader{
+  float: right;
+  width: 100%;
+  margin-top:30%;
+}
+
+.gamescorewrap {
+  background-color: white;
+  /*color: black;*/
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -88%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.gamewinner {
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}
+
+.BackGame{
+   margin-top: 10%;
+
+}
+
+.overgif{
+  margin-bottom: 10%;
+
 }

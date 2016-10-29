@@ -77,9 +77,10 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.use(session({
-  secret: 'dogs',
-  resave: true,
-  saveUninitialized: true
+   store: new MongoStore({
+        url: 'mongodb://localhost/test-session'
+    }),
+    secret: 'hello'
 }));
 
 app.use(passport.initialize());

@@ -111,7 +111,6 @@ a:hover {
   font-size: .7em;
   display: inline-block;
   padding: 10px;
-  margin-left: -50%;
 }
 
 .onlineuser {
@@ -176,12 +175,6 @@ a:hover {
   float: left;
   height: 100%;
   width: 20%
-}
-
-.curuseravi {
-  display: inline-block;
-  float:left;
-  width: 40%;
 }
 
 

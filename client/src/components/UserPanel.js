@@ -1,4 +1,5 @@
 import React from 'react'
+import CurrentUsers from './CurrentUsers'
 
 
 const UserPanel= (props) =>{
@@ -10,7 +11,9 @@ const UserPanel= (props) =>{
 	      <div className="currentname"><p className="name">{props.name}</p></div>
 			</div>
 			<div className="loggedin">
-			
+	      {props.users.map((user, i) => 
+	        <CurrentUsers users={user} key={i}/>
+	      )} 
 			</div>
 		</div> 
 	)

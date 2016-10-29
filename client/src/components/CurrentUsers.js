@@ -6,7 +6,7 @@ console.log('this is current user props', props)
 	return(
 		<div className="curwrap">
 			<div className="onlineuser">
-			  <div className="curuseravi"><img src={props.users.avi}></img></div>
+			  <div className="curuseravi"><img src={props.users.avi} id="curuserimg"></img></div>
         <div className="curusername">{props.users.name}</div>
 			</div>
 		</div> 

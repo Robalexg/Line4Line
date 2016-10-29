@@ -1,4 +1,5 @@
 import React from 'react'
+import Leaders from './Leaders'
 
 const LeaderBoard = (props) => {
 
@@ -11,11 +12,9 @@ return(
       <div className="scoreAvi">Player</div>
       <div className="scoreHeader">Score</div>
     </div>
-    <div className='scoreWrap'>
-        <div className="playerAvi"><img src={props.user.profilePic} id='imgsize'></img></div>
-        <div className="playerName">{props.user.name}</div>
-        <div className="playerScore">{props.user.score}</div>
-    </div>
+    {props.leaders.map((user, i) => 
+          <Leaders users={user} key={i}/>
+        )} 
   </div>
 )
   

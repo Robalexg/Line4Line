@@ -148,13 +148,29 @@ a:hover {
   width: 40%;
 }
 
-.curusername {
-  margin:right 15%;
-  font-size: .7em;
-  display: inline-block;
-  width: 10%;
+#curuserimg {
+  height:40px;
+  width: 40px
 }
 
+.curusername {
+  font-size: .7em;
+  display: inline-block;
+  padding: 10px;
+  margin-left: -50%;
+}
+
+.onlineuser {
+    height: 45px;
+    padding: 10px;
+}
+
+.onlineuser {
+    /* width: 100%; */
+    height: 45px;
+    padding: 10px;
+    background: white;
+}
 .userwrap {
   float:left;
   height: 100%;

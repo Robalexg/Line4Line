@@ -52,18 +52,9 @@ class RealLobby extends React.Component {
         <div className='lobby'>
           <div className="lobbyLabels">
             <div id="users">
-            <UserPanel name={this.name} avi={this.avi}/>
+            <UserPanel name={this.name} avi={this.avi} users={this.state.current}/>
             </div>
-            <div className="loggedin">
-            {this.state.current.map((user, i) => 
-              
-              <CurrentUsers users={user} key={i}/>
-              )
-            } 
-            </div>
-            {this.state.users.map((user, i) =>
-                <LeaderBoard user={user} key={i}/>)
-            } 
+            <LeaderBoard leaders={this.state.users}/>
           </div>
           <GameRoom onClick={this.clicked.bind(this)}/> 
         </div>

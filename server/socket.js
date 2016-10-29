@@ -391,6 +391,7 @@ module.exports = function (io) {
 
         var blah = user.map(function(x){
           var user = {name:x.name,profilePic:x.profilePic}
+          console.log("^^^^^^^^^^^", user)
           return user
         })
         socket.emit('getUsers', blah) 

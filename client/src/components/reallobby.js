@@ -18,7 +18,7 @@ class RealLobby extends React.Component {
     socket.on("getUsers",function(users){
       this.setState({
         current:users})
-      console.log("Current Users Online:", this.state.current)
+      console.log("Current Users Online:", users)
     }.bind(this))
     socket.emit("inLobby",true)
 

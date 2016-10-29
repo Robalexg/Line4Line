@@ -7,7 +7,7 @@ const GameWinner = (props) =>{
         <tr>
 		<td><img src={props.user.profilePic} id='imgsize'></img></td>
 		 <td>{props.user.name}</td>
-		 <td>{props.user.score}</td>
+		 <td >{props.user.score}</td>
 		</tr>
 	)
 

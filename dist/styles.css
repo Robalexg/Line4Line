@@ -58,88 +58,13 @@ body {
   color: #3b5998;
   background-color: white;
   border: 3px solid #3b5998;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }require("css!./stylesheet.css")
-=======
-}.lineContainer{
-  display: table;
-  margin: 0px auto;
-  width: 70%;
-}
-
-.userLine{
-  width: auto;
-  height: 55px;
-  margin: 10px;
-  padding: 10px;
-  float: left;
-}
-
-img{
-  border-radius: 50%;
-}
-
-.lineForm{
-  margin: 0px auto;
-}
-
-.lineInput{
-  float: left;
-  width: 80%;
-  height: 50px;
-  margin: 10px auto;
-  padding: 10px;
-  border: none;
-  border-bottom: solid 5px white;
-  transition: border 0.3s;
-  font-size: 18px;
-  font-weight: 800;
-  background-color: black;
-  color: white;
-}
-
-.lineInput::placeholder {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.lineInput:focus,
- .lineInput.focus {
-  border-bottom: solid 5px white;
-  outline: none;
-}.storyContainer{
-  color: white;
-  display: table;
-  background-color: black;
-  border-radius: 20px;
-  margin: auto ;
-  box-shadow: 10px 10px 0px #d7d7d7;
-  height: auto;
-  width: 90%;
-  padding-bottom: 100px;
-}
->>>>>>> 63ae9ed0915dcfdd775b93f3a8ba32a772a38709
 
 .lobby {
   text-align: left;
-<<<<<<< HEAD
   height: 98vh;
   width: 98vw;
-=======
   padding: 5px; 
-
->>>>>>> 63ae9ed0915dcfdd775b93f3a8ba32a772a38709
-=======
-}require("css!./stylesheet.css")
-
-.lobby {
-  text-align: left;
-
-  padding: 5px; 
-
-
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .lobbyLabels {
@@ -170,20 +95,7 @@ a:hover {
   color: #999 !important;
 }
 
-<<<<<<< HEAD
 .scoreWrap {
-=======
-
-
-
-  
-<<<<<<< HEAD
-}.openStoryWrap {
->>>>>>> 63ae9ed0915dcfdd775b93f3a8ba32a772a38709
-=======
-
-.scoreWrap {
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   background-color: white;
   color: black;
   border: solid 1px #d7d7d7;
@@ -209,7 +121,6 @@ a:hover {
   font-size: 1.2em;
   display: inline-block;
   width: 45%;
-<<<<<<< HEAD
 }
 
 .playerScore {
@@ -222,20 +133,6 @@ a:hover {
 .scoreHeader {
   display: inline-block;
   text-align: right;
-=======
-}
-
-.playerScore {
-  display: inline-block;
-  text-align: right;
-  width: 10%;
-  padding-left: 5%;
-}
-
-.scoreHeader {
-  display: inline-block;
-  text-align: right;
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   width: 60%;
   padding-left: 5%;
 }
@@ -252,7 +149,6 @@ a:hover {
   width: 40%;
 }
 
-<<<<<<< HEAD
 #curuserimg {
   height:40px;
   width: 40px
@@ -274,15 +170,6 @@ a:hover {
     height: 45px;
     padding: 10px;
 }
-=======
-.curusername {
-  margin:right 15%;
-  font-size: .7em;
-  display: inline-block;
-  width: 10%;
-}
-
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 .userwrap {
   float:left;
   height: 100%;
@@ -292,10 +179,79 @@ a:hover {
 .currentavi{
   float:right;
   margin:auto;
-<<<<<<< HEAD
   padding: 10px;
-=======
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
+}
+
+.scoreWrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.playerAvi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -30%;
+}
+
+.scoreAvi {
+  display: inline-block;
+  width: 5%;
+  float:left;
+}
+
+.playerName {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 45%;
+}
+
+.playerScore {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+  padding-left: 5%;
+}
+
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+  width: 60%;
+  padding-left: 5%;
+}
+
+#users {
+  float: left;
+  height: 100%;
+  width: 20%
+}
+
+.curuseravi {
+  display: inline-block;
+  float:left;
+  width: 40%;
+}
+
+.curusername {
+  margin:right 15%;
+  font-size: .7em;
+  display: inline-block;
+  width: 10%;
+}
+
+.userwrap {
+  float:left;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.currentavi{
+  float:right;
+  margin:auto;
 }
 
 .currentname{
@@ -328,14 +284,9 @@ a:hover {
 .gamewrapper{
   margin-left:25%;
   margin-right:25%;
-<<<<<<< HEAD
   height: 100%;
   padding: 10px;
    height: 98vh;
-=======
-  height: 1000px;
-  padding: 10px;
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .mixedgame {
@@ -352,11 +303,6 @@ a:hover {
   background-repeat: no-repeat;
   height:33%;
   width:100%;
-<<<<<<< HEAD
-=======
-  text-align: center;
-  vertical-align: center;
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .musicroom {
@@ -369,11 +315,7 @@ a:hover {
 
 .gamebutton {
   color: white;
-<<<<<<< HEAD
   background-color: black;
-=======
- /* background-color: black;*/
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   border: 3px solid white;
   font-size: 1em;
   font-weight: 800;
@@ -385,26 +327,72 @@ a:hover {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-<<<<<<< HEAD
-=======
-
 }
 
+.gameleader{
+  float: right;
+  width: 100%;
+  margin-top:30%;
+}
+
+.gamescorewrap {
+  background-color: white;
+  color: black;
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -88%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.gamewinner {
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}
+
+#Theme{
+width: 50%;
+}
 
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-   
-    width: 60%;
-    margin-left:20%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left:20%;
   margin-right:35%;
 }
 
 td, th {
-   border: 1px solid #dddddd;
-
-    text-align: left;
-    padding: 8px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 tr:nth-child(even) {
@@ -414,9 +402,66 @@ tr:nth-child(even) {
 
 .tableHead{
   background-color: #808080;
+}
 
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
-}.signupWrap {
+.gameleader{
+  float: right;
+  width: 100%;
+  margin-top:30%;
+}
+
+.gamescorewrap {
+  background-color: white;
+  /*color: black;*/
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -88%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.gamewinner {
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}
+
+.BackGame{
+   margin-top: 10%;
+
+}
+
+.overgif{
+  margin-bottom: 10%;
+
+}
+.signupWrap {
   background-color: white;
   padding: 15px;
   border-radius: 5px;
@@ -473,74 +518,4 @@ a:hover {
 a:active {
   text-decoration: none;
   color: white;
-}require("css!./stylesheet.css")
-
-.gameleader{
-  float: right;
-  width: 100%;
-  margin-top:30%;
-}
-
-.gamescorewrap {
-  background-color: white;
-<<<<<<< HEAD
-  color: black;
-=======
-  /*color: black;*/
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
-  border: solid 1px #d7d7d7;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 3px 3px 0px #d7d7d7;
-}
-
-.gameplayeravi {
-  display: inline-block;
-  width: 5%;
-  margin-left: -88%;
-}
-
-.gamescoreheader {
-    display: inline-block;
-    width: 30%;
-    padding-left: 5%;
-}
-
-.gameplayername {
-    font-size: 1.2em;
-    display: inline-block;
-}
-
-.gamewinner {
-<<<<<<< HEAD
-  background: black;
-=======
-/*  background: black;*/
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
-  height: 98%;
-  width: 98%;
-  height: 98vh;
-  width: 98vw;
-}
-
-.gameover {
-  height: 100px;
-}
-
-.gamescore {
-  margin-top: 9%;
-<<<<<<< HEAD
-=======
-}
-
-.BackGame{
-   margin-top: 10%;
-
-}
-
-.overgif{
-  margin-bottom: 10%;
-
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }

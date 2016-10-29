@@ -2,16 +2,9 @@ require("css!./stylesheet.css")
 
 .lobby {
   text-align: left;
-<<<<<<< HEAD
   height: 98vh;
   width: 98vw;
   padding: 5px; 
-=======
-
-  padding: 5px; 
-
-
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .lobbyLabels {
@@ -52,7 +45,6 @@ a:hover {
   box-shadow: 3px 3px 0px #d7d7d7;
 }
 
-<<<<<<< HEAD
 .playerAvi {
   display: inline-block;
   width: 5%;
@@ -128,10 +120,7 @@ a:hover {
   float:right;
   margin:auto;
   padding: 10px;
-=======
-
-
-  
+}
 
 .scoreWrap {
   background-color: white;
@@ -203,7 +192,6 @@ a:hover {
 .currentavi{
   float:right;
   margin:auto;
->>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .currentname{
@@ -315,7 +303,6 @@ a:hover {
 }
 
 .gamewinner {
-  background: black;
   height: 98%;
   width: 98%;
   height: 98vh;
@@ -357,7 +344,7 @@ tr:nth-child(even) {
   background-color: #808080;
 }
 
-gameleader{
+.gameleader{
   float: right;
   width: 100%;
   margin-top:30%;

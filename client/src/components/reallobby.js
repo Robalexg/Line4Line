@@ -22,8 +22,6 @@ class RealLobby extends React.Component {
     }.bind(this))
     socket.emit("inLobby",true)
 
-    socket.on("")
-    
    $.get('/user')
       .then(user => {
         console.log('this is the returned get user', user)

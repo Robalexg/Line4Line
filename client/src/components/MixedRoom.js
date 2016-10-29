@@ -6,7 +6,6 @@ const MixedRoom = (props) =>{
     <a id="mix" onClick={props.onClick.bind(this)} className="gamebutton">
       Play in the Grab Bag Room
     </a>
-      
     </div> 
   )
 

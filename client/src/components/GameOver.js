@@ -4,7 +4,7 @@ const GameOver = () =>{
 
 	return(
 	  <div className='gameover'>
-	   
+	  
 	  </div>
 	)
 

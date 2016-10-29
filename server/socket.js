@@ -191,7 +191,7 @@ var gameData = {
   }
 }
 var askedQuestions = {speech:[],music:[],mix:[]}
-
+var admins = ['0205631268421505']
 
 
 module.exports = function (io) {
@@ -201,6 +201,15 @@ module.exports = function (io) {
 
     socket.on("signedIn",function(data){
       var user = {}
+      admins.forEach(function(admin){
+        if(data.id === admin){
+          user.admin = true
+        }
+      })
+
+      if(user['admin']){
+        socket.emit("admin",true)
+      }
       user.name = data.name
       user.avi = data.profileImage
       users.push(user) 

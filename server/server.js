@@ -11,7 +11,7 @@ const router           = require('./routes/routes')
 const User             = require('./models/user')
 const stories          = require('./controllers/storyController')
 const port             = process.env.PORT || 8081
-const charles          = require('./secretsecrets')
+// const charles          = require('./secretsecrets')
 const MongoStore = require('connect-mongo')(session);
 var http = require('http').Server(app)
 var io = require('socket.io').listen(http)
@@ -37,8 +37,8 @@ app.use(session({
 }));
 
 passport.use(new FacebookStrategy({
-    clientID          : process.env.appId || charles.appId,
-    clientSecret      : process.env.appSecret || charles.appSecret,
+    clientID          : process.env.appId 
+    clientSecret      : process.env.appSecret 
     callbackURL       : "/auth/facebook/return",
     passReqToCallback : true,
 
@@ -85,11 +85,11 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, '../dist')))
-app.use(session({
-  secret: 'dogs',
-  resave: true,
-  saveUninitialized: true
-}));
+// app.use(session({
+//   secret: 'dogs',
+//   resave: true,
+//   saveUninitialized: true
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());

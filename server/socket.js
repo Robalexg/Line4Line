@@ -14,7 +14,8 @@ var gameData = {
         b: 'that the principles upon which our nation were founded shall endure',
         c: 'that the state of our union is strong',
         d: 'that we will make America great again',
-        correct: 'c'
+        correct: 'c',
+        source: ""
      },
      { 
         title: 'answer',
@@ -24,7 +25,8 @@ var gameData = {
         a: "",
         b: "",
         c: 'that the state of our union is strong',
-        d: ""
+        d: "",
+        source: "http://vocaroo.com/i/s0r6dv4jZt82"
      },
      {
         title: 'MLK',
@@ -36,7 +38,8 @@ var gameData = {
         b: 'that one day this nation will rise up and live out the true meaning of its creed',
         c: 'that one day, even the state of Missisippi, a state sweltering with the heat of injustice ... will be transformed into an oasis of freedom and justice',
         d: 'that one day, I will save 15 percent on my car insurance by switiching to Geico',
-        correct: 'b'
+        correct: 'b',
+        source: ""
      },
     {
         title: 'answer',
@@ -46,7 +49,8 @@ var gameData = {
         a: "",
         b: 'that one day this nation will rise up and live out the true meaning of its creed',
         c: "",
-        d: ""
+        d: "",
+        source: "http://vocaroo.com/i/s0r6dv4jZt82"
      },    
      {
         title: 'Reagan',
@@ -58,7 +62,8 @@ var gameData = {
         b: 'Tear down this wall!',
         c: 'Show me the money!',
         d: 'Open this gate!',
-        correct: 'd'
+        correct: 'd',
+        source: ""
      },
       {
          title: 'answer',
@@ -70,7 +75,8 @@ var gameData = {
         b: "",
         c: "",
         d: 'Open this gate!',
-        correct: 'd'
+        correct: 'd',
+        source: "http://vocaroo.com/i/s0r6dv4jZt82"
      },
       {
         title: 'Bush',
@@ -82,7 +88,8 @@ var gameData = {
         b: 'We\'ve had some setbacks',
         c: 'We\'ve had some disagreements',
         d: 'We\'ve lowered taxes',
-        correct: 'a'
+        correct: 'a',
+        source: ""
      },
            {
          title: 'answer',
@@ -94,7 +101,8 @@ var gameData = {
         b: '',
         c: '',
         d: '',
-        correct: 'a'
+        correct: 'a',
+        source: "http://vocaroo.com/i/s0r6dv4jZt82"
      },      
      {
         title: 'Lincoln',
@@ -106,7 +114,8 @@ var gameData = {
         b: 'We are now testing whether that nation, or any nation, can long endure',
         c: 'Now we are engaged in a great Civil War',
         d: 'That government of the people, by the people, for the people, shall not perish from this Earth',
-        correct: 'c'
+        correct: 'c',
+        source: ""
      },
       {
         title: 'answer',
@@ -118,7 +127,8 @@ var gameData = {
         b: '',
         c: 'Now we are engaged in a great Civil War',
         d: '',
-        correct: 'c'
+        correct: 'c',
+        source: "http://vocaroo.com/i/s0r6dv4jZt82"
      }
     ],
     music: [
@@ -248,15 +258,11 @@ var gameData = {
   }
 }
 
-var currentUser = require("./models/currentUsers")
-
 var speechLength = gameData.videos.speech.length
 var speechIndex = 0
 var askedQuestions = {speech:[],music:[],mix:[]}
 var admins = ['10205631268421505']
 var startTime = 0;
-
-
 
 
 module.exports = function (io) {
@@ -278,13 +284,7 @@ module.exports = function (io) {
       }
       user.name = data.name
       user.avi = data.profileImage
-      console.log("on",socket.id)
-      var currentUsers = new currentUser({
-        name: user.name,
-        profilePic: user.avi,
-        socketId: socket.id
-      })
-      currentUsers.save()
+      users.push(user) 
       updateUsernames()
     })
 
@@ -330,13 +330,14 @@ module.exports = function (io) {
       if (diff >= 20000){
         score = 0;
       }
+      score = score || 0;
 
       console.log("score:",score)
     })
       
     socket.on("answerOver", function(){
       var roomname = getRoomName(socket)
-      console.log("answer")
+      console.log("answerOver event received!")
       setTimeout(function(){
         speechIndex++
         io.to(roomname).emit('question',gameData.videos[roomname][speechIndex])
@@ -346,22 +347,20 @@ module.exports = function (io) {
     socket.on("startTimer",function(time){
       var roomname = getRoomName(socket)
       startTime = time
-      console.log("notAnswer")
+      console.log("startTimer event received!")
       speechIndex++
+      console.log('20s timer started!')
       setTimeout(function(){
         io.to(roomname).emit('question',gameData.videos[roomname][speechIndex])
+        console.log('20s timer ended!')
       }, 20000)
     })
 
   
 
     socket.on("disconnect",function (data) {
-      console.log("disconnect",socket.id)
-      currentUser.find({'socketId': socket.id}).remove().then(function(e){
-        console.log("deleted user",e)
-      })
-
-      // currentUser.collection.remove()
+      users.splice(users.indexOf(socket.username,1))
+      updateUsernames()
       connections.splice(connections.indexOf(socket),1)
       console.log(" DISCONNECT: %s sockets connected",connections.length);  
     })
@@ -388,6 +387,7 @@ module.exports = function (io) {
     }
 
     var updateUsernames =  function() {
+
       var currentUsers = currentUser.find().then(function(user){
 
         var blah = user.map(function(x){
@@ -401,19 +401,29 @@ module.exports = function (io) {
     }
 
     var getRoomName = function(socket){
-      return socket.rooms["music"] ?
-        'music'
-      :
-      socket.rooms['speech'] ?
-       'speech'
-      :
-      socket.rooms['mix'] ?
-        'mix'
-      :
-        "lobby"
+      if (socket.rooms["music"]) {
+        return 'music';
+      } else if (socket.rooms['speech']) {
+        return 'speech';
+      } else if (socket.rooms['mix']) {
+        return 'mix';
+      } else {
+        return 'lobby';
+      } 
     }
+
+    //   return socket.rooms["music"] ?
+    //     'music'
+    //   :
+    //   socket.rooms['speech'] ?
+    //    'speech'
+    //   :
+    //   socket.rooms['mix'] ?
+    //     'mix'
+    //   :
+    //     "lobby"
+    // }
 
   })
 }
-
 

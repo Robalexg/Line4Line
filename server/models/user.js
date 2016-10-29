@@ -13,10 +13,7 @@ const userSchema = new Schema({
 
   token       : String,
 
-  currentscore		  : Number, 
-
-  highestscore     : Number
-
+  stories     : [ String ]
 })
 
 const User      = mongoose.model('User', userSchema)

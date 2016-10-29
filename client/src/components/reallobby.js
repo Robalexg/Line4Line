@@ -3,7 +3,6 @@ import LeaderBoard from './Leaderboard'
 import UserPanel from './UserPanel'
 import GameRoom from './GameRoom'
 import socket from '../../socket'
-import Admin from "./admin"
 import Game from './game'
 
 class RealLobby extends React.Component {
@@ -12,7 +11,7 @@ class RealLobby extends React.Component {
     super(props); 
     this.state = {
       users: [], 
-      current: []
+      current: [],
       admin: false,
       route: null
     }

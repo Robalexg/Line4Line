@@ -13,6 +13,8 @@ const userSchema = new Schema({
 
   token       : String,
 
+  score		  : Number, 
+
   stories     : [ String ]
 })
 

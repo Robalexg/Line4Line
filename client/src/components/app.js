@@ -1,9 +1,8 @@
 import React from 'react'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
-import Lobby from './lobby'
-import Story from './story'
+import RealLobby from './reallobby'
 import Login from './login'
-import CreateStory from './CreateStory'
+import EndGame from './EndGame'
 import NavBar from './NavBar'
 
 
@@ -50,8 +49,8 @@ class App extends React.Component {
         //else tell the user to login
         this.state.currentUser ? 
         <Router history={hashHistory}>
-          <Route path='/' component={Lobby} />
-          <Route path='/stories/:id' component={Story} user={this.state.currentUser} />
+          <Route path='/' component={RealLobby} />
+          <Route path='/endgame' component={EndGame} />
         </Router> 
         : 
         <div>Please Login</div>

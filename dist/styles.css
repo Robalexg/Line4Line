@@ -14,6 +14,7 @@ body {
   padding: 14px 30px;
   width: 100%;
   transition: ease-in-out 150ms;
+  margin: auto;
 }
 
 .blackButton {
@@ -57,73 +58,13 @@ body {
   color: #3b5998;
   background-color: white;
   border: 3px solid #3b5998;
-}.lineContainer{
-  display: table;
-  margin: 0px auto;
-  width: 70%;
-}
+}require("css!./stylesheet.css")
 
-.userLine{
-  width: auto;
-  height: 55px;
-  margin: 10px;
-  padding: 10px;
-  float: left;
-}
-
-img{
-  border-radius: 50%;
-}
-
-.lineForm{
-  margin: 0px auto;
-}
-
-.lineInput{
-  float: left;
-  width: 80%;
-  height: 50px;
-  margin: 10px auto;
-  padding: 10px;
-  border: none;
-  border-bottom: solid 5px white;
-  transition: border 0.3s;
-  font-size: 18px;
-  font-weight: 800;
-  background-color: black;
-  color: white;
-}
-
-.lineInput::placeholder {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.lineInput:focus,
- .lineInput.focus {
-  border-bottom: solid 5px white;
-  outline: none;
-}.storyContainer{
-  color: white;
-  display: table;
-  background-color: black;
-  border-radius: 20px;
-  margin: auto ;
-  box-shadow: 10px 10px 0px #d7d7d7;
-  height: auto;
-  width: 90%;
-  padding-bottom: 100px;
-}
-
-.title {
-  padding-top: 60px;
-  text-align: center;
-  font-family: helvetica;
-  border: 3px;
-  font-size: 50px;
-}.lobby {
+.lobby {
   text-align: left;
+
   padding: 5px; 
+
 
 }
 
@@ -131,12 +72,12 @@ img{
   padding: 0px 15px 0px 15px;
 }
 
-.storyNames {
+.numberOfUsers {
   display: inline-block;
-  width: 50%;
+  width: 20%;
 }
 
-.numberOfUsers {
+.leaderbutton {
   display: inline-block;
   width: 20%;
 }
@@ -144,18 +85,23 @@ img{
 .toggleDisplayLink{
   text-align: right;
   display: inline-block;
-  width: 25%;
+  width: 15%;
+}
+
+#imgsize{
+  height: 50px;
+  width: 50px;
 }
 a:hover {
   color: #999 !important;
 }
 
 
-#Theme{
 
-width: 50%;
+
   
-}.openStoryWrap {
+
+.scoreWrap {
   background-color: white;
   color: black;
   border: solid 1px #d7d7d7;
@@ -165,25 +111,171 @@ width: 50%;
   box-shadow: 3px 3px 0px #d7d7d7;
 }
 
-.openStoryTitle {
-  font-size: 1.2em;
+.playerAvi {
   display: inline-block;
-  width: 55%;
+  width: 5%;
+  margin-left: -30%;
 }
 
-.openStoryUsers {
-  font-size: 1.2em;
+.scoreAvi {
   display: inline-block;
-  width: 10%
+  width: 5%;
+  float:left;
 }
 
-.openStoryJoinWrap {
+.playerName {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 45%;
+}
+
+.playerScore {
   display: inline-block;
   text-align: right;
-  width: 30%;
+  width: 10%;
   padding-left: 5%;
 }
-.signupWrap {
+
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+  width: 60%;
+  padding-left: 5%;
+}
+
+#users {
+  float: left;
+  height: 100%;
+  width: 20%
+}
+
+.curuseravi {
+  display: inline-block;
+  float:left;
+  width: 40%;
+}
+
+.curusername {
+  margin:right 15%;
+  font-size: .7em;
+  display: inline-block;
+  width: 10%;
+}
+
+.userwrap {
+  float:left;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.currentavi{
+  float:right;
+  margin:auto;
+}
+
+.currentname{
+  margin:auto;
+}
+
+.name{
+  text-align: center;
+}
+
+.currentuser{
+  margin:auto;
+  height: 40%;
+  border-width: 2px;
+  border-bottom-width:2px;
+  border-bottom-color:black;
+  border-bottom-style: solid;
+}
+
+.loggedin{
+  margin:auto;
+  margin-top:10%;
+}
+
+.leaderwrapper{
+  float: right;
+  width: 25%;
+}
+
+.gamewrapper{
+  margin-left:25%;
+  margin-right:25%;
+  height: 1000px;
+  padding: 10px;
+}
+
+.mixedgame {
+  background-image: url('https://cdn.shopify.com/s/files/1/0013/7332/products/5_bc439036-4f21-47ff-9fbb-bf57faf5c18c_1024x1024.jpg?v=1419048096');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%
+}
+ 
+.speechroom {
+  background-image: url('http://wpmedia.news.nationalpost.com/2015/08/republican-debate-2015.jpg?quality=65&strip=all');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%;
+  text-align: center;
+  vertical-align: center;
+}
+
+.musicroom {
+  background-image: url('http://wallpaper.zone/img/5008582.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:33%;
+  width:100%
+}
+
+.gamebutton {
+  color: white;
+ /* background-color: black;*/
+  border: 3px solid white;
+  font-size: 1em;
+  font-weight: 800;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+  transition: ease-in-out 150ms;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+   
+    width: 60%;
+    margin-left:20%;
+  margin-right:35%;
+}
+
+td, th {
+   border: 1px solid #dddddd;
+
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.tableHead{
+  background-color: #808080;
+
+}.signupWrap {
   background-color: white;
   padding: 15px;
   border-radius: 5px;
@@ -204,70 +296,6 @@ width: 50%;
   width: 200px;
   font-size: 1.3em;
   margin: 0px 10px 0px 10px;
-}.createStoryWrap {
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px #d7d7d7;
-  box-shadow: 3px 3px 0px #d7d7d7;
-}
-
-.createStoryInput {
-  border: solid black 3px;
-  border-radius: 6px;
-  height: 50px;
-  font-size: 1.3em;
-  margin: auto;
-  display: block;
-  text-align: center;
-}
-
-.createTitleInput {
-  width: 400px;
-}
-
-.createNumberInput {
-  width: 60px;
-}
-
-.createButtonWrap {
-  width: 30%;
-  margin: 10px auto;
-}.hide {
-  overflow: hidden;
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-.show {
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  max-height: 1000px;
-  overflow: hidden;
-}
-
-.toggleButtonWrap {
-  width: 300px;
-  margin: 30px auto 30px auto;
 }.navbarWrap {
   color: white;
   height: 80px;
@@ -304,4 +332,63 @@ a:hover {
 a:active {
   text-decoration: none;
   color: white;
+}require("css!./stylesheet.css")
+
+.gameleader{
+  float: right;
+  width: 100%;
+  margin-top:30%;
+}
+
+.gamescorewrap {
+  background-color: white;
+  /*color: black;*/
+  border: solid 1px #d7d7d7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #d7d7d7;
+}
+
+.gameplayeravi {
+  display: inline-block;
+  width: 5%;
+  margin-left: -88%;
+}
+
+.gamescoreheader {
+    display: inline-block;
+    width: 30%;
+    padding-left: 5%;
+}
+
+.gameplayername {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.gamewinner {
+/*  background: black;*/
+  height: 98%;
+  width: 98%;
+  height: 98vh;
+  width: 98vw;
+}
+
+.gameover {
+  height: 100px;
+}
+
+.gamescore {
+  margin-top: 9%;
+}
+
+.BackGame{
+   margin-top: 10%;
+
+}
+
+.overgif{
+  margin-bottom: 10%;
+
 }

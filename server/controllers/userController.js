@@ -1,3 +1,4 @@
+
 const db = require('../models/config')
 const User = require('../models/user')
 
@@ -7,7 +8,8 @@ module.exports = {
   const user = {
     id: req.user.facebookId,
     name: req.user.name,
-    profileImage: req.user.profilePic
+    profileImage: req.user.profilePic,
+    score: req.user.score
   }
   res.send(user)
 },
@@ -32,6 +34,44 @@ module.exports = {
         const err = new Error({error: 'This username is already taken'})
         res.send(err)
       }
+    })
+  },
+
+  score: (req, res) => {
+    const username =  req.body.username
+    const userscore = req.body.score
+    User.findOne({username: username}
+    .then((user) =>{
+      User.find({score})
+      .then((score) =>{
+        if(score < userscore){
+          User.update({score: userscore})
+          .then(() =>{
+            return res.status(201).send('score updated')
+          })
+          .catch((err) => {
+            res.status(201).send('this is not the highest score')
+          })
+        }
+      })
+      .catch((err) =>{
+        console.log('this is a user score error inside the find', err)
+      })
+    })
+    .catch((err) =>{
+      console.log('this is a score error', err)
+      return res.status(500).send('our bad')
+    }))
+  },
+
+  getScores: (req, res) => {
+    User.find().sort({score:-1})
+    .then((users)=>{
+      console.log('this worked getScores', users)
+      res.status(201).send(users)
+    })
+    .catch((err) =>{
+      console.log('this getScores didnt work', err)
     })
   },
 

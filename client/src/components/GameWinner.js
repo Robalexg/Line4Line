@@ -4,21 +4,11 @@ import GameOver from './GameOver'
 const GameWinner = (props) =>{
 
 	return(
-		  <div className='gameleader'>
-		    <div className='gamescorewrap'>
-		      <div>Game Stats</div>
-		    </div>
-		    <div className='gamescorewrap'>
-		      <div className="scoreAvi">Player</div>
-		      <div className="scoreHeader">Score</div>
-		    </div>
-		    <div className='gamescorewrap'>
-		        <div className="gameplayeravi"><img src={props.user.profilePic} id='imgsize'></img></div>
-		        <div className="gameplayername">{props.user.name}</div>
-		        <div className="gameplayerscore">{props.user.score}</div>
-		    </div>
-		  </div>
-		 
+        <tr>
+		<td><img src={props.user.profilePic} id='imgsize'></img></td>
+		 <td>{props.user.name}</td>
+		 <td>{props.user.score}</td>
+		</tr>
 	)
 
 }

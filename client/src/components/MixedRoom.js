@@ -10,7 +10,6 @@ const MixedRoom = (props) =>{
       
     </div> 
   )
-
 }
 
 export default MixedRoom

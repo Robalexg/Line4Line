@@ -2,7 +2,6 @@ import React from 'react'
 import LeaderBoard from './Leaderboard'
 import UserPanel from './UserPanel'
 import GameRoom from './GameRoom'
-import CurrentUsers from './CurrentUsers'
 import socket from '../../socket'
 
 class RealLobby extends React.Component {
@@ -27,17 +26,18 @@ class RealLobby extends React.Component {
     
    $.get('/user')
       .then(user => {
+        console.log('this is the returned get user', user)
         this.name = user.name
         this.avi = user.profileImage
       })
 
     $.get('/score')
     .then(users => {
+      console.log('Got users: ', users);
       this.setState({
        users: users
       })
     })
-
   }
 
   clicked(e){

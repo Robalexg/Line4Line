@@ -59,6 +59,7 @@ body {
   background-color: white;
   border: 3px solid #3b5998;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }require("css!./stylesheet.css")
 =======
 }.lineContainer{
@@ -129,6 +130,16 @@ img{
   padding: 5px; 
 
 >>>>>>> 63ae9ed0915dcfdd775b93f3a8ba32a772a38709
+=======
+}require("css!./stylesheet.css")
+
+.lobby {
+  text-align: left;
+
+  padding: 5px; 
+
+
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .lobbyLabels {
@@ -163,12 +174,16 @@ a:hover {
 .scoreWrap {
 =======
 
-#Theme{
 
-width: 50%;
+
   
+<<<<<<< HEAD
 }.openStoryWrap {
 >>>>>>> 63ae9ed0915dcfdd775b93f3a8ba32a772a38709
+=======
+
+.scoreWrap {
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   background-color: white;
   color: black;
   border: solid 1px #d7d7d7;
@@ -194,6 +209,7 @@ width: 50%;
   font-size: 1.2em;
   display: inline-block;
   width: 45%;
+<<<<<<< HEAD
 }
 
 .playerScore {
@@ -206,6 +222,20 @@ width: 50%;
 .scoreHeader {
   display: inline-block;
   text-align: right;
+=======
+}
+
+.playerScore {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+  padding-left: 5%;
+}
+
+.scoreHeader {
+  display: inline-block;
+  text-align: right;
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   width: 60%;
   padding-left: 5%;
 }
@@ -222,6 +252,7 @@ width: 50%;
   width: 40%;
 }
 
+<<<<<<< HEAD
 #curuserimg {
   height:40px;
   width: 40px
@@ -243,6 +274,15 @@ width: 50%;
     height: 45px;
     padding: 10px;
 }
+=======
+.curusername {
+  margin:right 15%;
+  font-size: .7em;
+  display: inline-block;
+  width: 10%;
+}
+
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 .userwrap {
   float:left;
   height: 100%;
@@ -252,7 +292,10 @@ width: 50%;
 .currentavi{
   float:right;
   margin:auto;
+<<<<<<< HEAD
   padding: 10px;
+=======
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .currentname{
@@ -285,9 +328,14 @@ width: 50%;
 .gamewrapper{
   margin-left:25%;
   margin-right:25%;
+<<<<<<< HEAD
   height: 100%;
   padding: 10px;
    height: 98vh;
+=======
+  height: 1000px;
+  padding: 10px;
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .mixedgame {
@@ -304,6 +352,11 @@ width: 50%;
   background-repeat: no-repeat;
   height:33%;
   width:100%;
+<<<<<<< HEAD
+=======
+  text-align: center;
+  vertical-align: center;
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }
 
 .musicroom {
@@ -316,7 +369,11 @@ width: 50%;
 
 .gamebutton {
   color: white;
+<<<<<<< HEAD
   background-color: black;
+=======
+ /* background-color: black;*/
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   border: 3px solid white;
   font-size: 1em;
   font-weight: 800;
@@ -328,6 +385,37 @@ width: 50%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+<<<<<<< HEAD
+=======
+
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+   
+    width: 60%;
+    margin-left:20%;
+  margin-right:35%;
+}
+
+td, th {
+   border: 1px solid #dddddd;
+
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.tableHead{
+  background-color: #808080;
+
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }.signupWrap {
   background-color: white;
   padding: 15px;
@@ -395,7 +483,11 @@ a:active {
 
 .gamescorewrap {
   background-color: white;
+<<<<<<< HEAD
   color: black;
+=======
+  /*color: black;*/
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   border: solid 1px #d7d7d7;
   border-radius: 5px;
   margin: 10px;
@@ -421,7 +513,11 @@ a:active {
 }
 
 .gamewinner {
+<<<<<<< HEAD
   background: black;
+=======
+/*  background: black;*/
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
   height: 98%;
   width: 98%;
   height: 98vh;
@@ -434,4 +530,17 @@ a:active {
 
 .gamescore {
   margin-top: 9%;
+<<<<<<< HEAD
+=======
+}
+
+.BackGame{
+   margin-top: 10%;
+
+}
+
+.overgif{
+  margin-bottom: 10%;
+
+>>>>>>> 379230b5ea0ad46d3145753605b11a89734d4409
 }

@@ -4,8 +4,6 @@ import SpeechRoom from './SpeechRoom'
 import MusicRoom from './MusicRoom'
 
 const GameRoom = (props) =>{
-
-
 	return(
 		<div className="gamewrapper">
 		<SpeechRoom onClick={props.onClick.bind(this)}/>

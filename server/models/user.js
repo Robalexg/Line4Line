@@ -16,6 +16,7 @@ const userSchema = new Schema({
   currentscore		  : Number, 
 
   highestscore     : Number
+
 })
 
 const User      = mongoose.model('User', userSchema)

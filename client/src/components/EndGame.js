@@ -1,7 +1,7 @@
 import React from 'react'
 import GameOver from './GameOver'
 import GameWinner from './GameWinner'
-
+import LobbyButton from './LobbyButton'
 
 class EndGame extends React.Component {
 	 constructor (props) {
@@ -34,13 +34,29 @@ class EndGame extends React.Component {
         <div className="overgif">
           <GameOver />
         </div>
-        <div className='gamescore'>
-          {this.state.users.map((user, i) =>
-              <GameWinner user={user} key={i}/>)
-          } 
-        </div>
+         <div className='gamescore'> 
+         <h1> Score Board</h1>
+        <table>
+      <tr className="tableHead">
+       <td> Player</td>
+       <td> Player Name</td>
+      <td>Score</td>
+      </tr>
+      <tbody>
+        {this.state.users.map((user, i) =>
+         <GameWinner user={user} key={i}/>)
+        } 
+            
+      </tbody>
+      </table>
       </div>
-    )
+      <div className= "BackGame">
+        <a href="/" className="standardButton blackButton">
+           Return to Lobby 
+        </a>
+      </div>
+    </div>
+  )
   }
 }
 

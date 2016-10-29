@@ -12,6 +12,7 @@ const User             = require('./models/user')
 const stories          = require('./controllers/storyController')
 const port             = process.env.PORT || 8081
 const charles          = require('./secretsecrets')
+const MongoStore = require('connect-mongo')(session);
 var http = require('http').Server(app)
 var io = require('socket.io').listen(http)
 var socket = require("./socket")
@@ -27,6 +28,13 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (obj, done) {
   done(null,obj)
 })
+
+app.use(session({
+    secret: 'foo',
+    store: new MongoStore({ url: 'mongodb://localhost:51707/line4line' }),
+     resave: true,
+  saveUninitialized: true
+}));
 
 passport.use(new FacebookStrategy({
     clientID          : process.env.appId || charles.appId,

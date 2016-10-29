@@ -22,12 +22,14 @@ class RealLobby extends React.Component {
       console.log("Current Users Online:", this.state.current)
     }.bind(this))
     socket.emit("inLobby",true)
+
+    socket.on("")
     
-   // $.get('/user')
-   //    .then(user => {
-   //      this.name = user.name
-   //      this.avi = user.profileImage
-   //    })
+   $.get('/user')
+      .then(user => {
+        this.name = user.name
+        this.avi = user.profileImage
+      })
 
     $.get('/score')
     .then(users => {
@@ -51,6 +53,8 @@ class RealLobby extends React.Component {
           <div className="lobbyLabels">
             <div id="users">
             <UserPanel name={this.name} avi={this.avi}/>
+            </div>
+            <div className="loggedin">
             {this.state.current.map((user, i) => 
               
               <CurrentUsers users={user} key={i}/>

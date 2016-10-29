@@ -4,6 +4,7 @@ require("css!./stylesheet.css")
   text-align: left;
   height: 98vh;
   width: 98vw;
+  padding: 5px; 
 }
 
 .lobbyLabels {
@@ -243,4 +244,8 @@ a:hover {
 
 .gamescore {
   margin-top: 9%;
+}
+
+#Theme{
+width: 50%;
 }

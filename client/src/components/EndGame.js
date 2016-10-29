@@ -1,7 +1,7 @@
 import React from 'react'
 import GameOver from './gameover'
 import GameWinner from './gamewinner'
-import LobbyButton from './lobbybutton'
+
 
 class EndGame extends React.Component {
 	 constructor (props) {

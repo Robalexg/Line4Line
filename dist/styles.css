@@ -166,10 +166,8 @@ a:hover {
 }
 
 .onlineuser {
-    /* width: 100%; */
     height: 45px;
     padding: 10px;
-    background: white;
 }
 .userwrap {
   float:left;

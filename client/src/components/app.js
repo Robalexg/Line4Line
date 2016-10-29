@@ -5,6 +5,7 @@ import Login from './login'
 import EndGame from './EndGame'
 import NavBar from './NavBar'
 import socket from '../../socket'
+import Game from "./game"
 
 
 
@@ -12,7 +13,7 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentUser: false
+      currentUser: true
     }
     //Bind this to logout so it can be passed down through multiple components
     this.logout = this.logout.bind(this)
@@ -53,6 +54,7 @@ class App extends React.Component {
         <Router history={hashHistory}>
           <Route path='/' component={RealLobby} />
           <Route path='/endgame' component={EndGame} />
+          <Route path='/game' component={EndGame} />
         </Router> 
         : 
         <div>Please Login</div>

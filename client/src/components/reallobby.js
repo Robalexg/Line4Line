@@ -14,7 +14,8 @@ class RealLobby extends React.Component {
     super(props); 
     this.state = {
       users: [], 
-      admin: false
+      admin: false,
+      route: null
     }
   }
 
@@ -38,6 +39,10 @@ class RealLobby extends React.Component {
     //   })
     // })
 
+    socket.on("roomchange",function room(room) {
+      this.setState({route:room})
+    }.bind(this))
+
   }
 
   clicked(e){
@@ -48,6 +53,11 @@ class RealLobby extends React.Component {
   render () {
     return (
       <div>
+
+      { 
+        this.state.route ?
+        <Game lobbyname={this.state.route}/>
+        :
         <div className='lobby'>
           <div className="lobbyLabels">
             <div id="users">
@@ -55,15 +65,11 @@ class RealLobby extends React.Component {
             </div>
             {this.state.users.map((user, i) =>
             <LeaderBoard user={user} key={i}/>)}   
-
-            {this.state.admin ?
-              <Admin/>
-              :
-              <Game/>
-            } 
           </div>
           <GameRoom onClick={this.clicked.bind(this)}/> 
-        </div>
+        </div>        
+      }
+
           
       </div>
     )

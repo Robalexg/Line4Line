@@ -62,11 +62,8 @@ body {
 
 .lobby {
   text-align: left;
-<<<<<<< HEAD
   height: 98vh;
   width: 98vw;
-=======
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .lobbyLabels {
@@ -167,10 +164,7 @@ a:hover {
 .currentavi{
   float:right;
   margin:auto;
-<<<<<<< HEAD
   padding: 10px;
-=======
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .currentname{
@@ -203,15 +197,9 @@ a:hover {
 .gamewrapper{
   margin-left:25%;
   margin-right:25%;
-<<<<<<< HEAD
   height: 100%;
   padding: 10px;
    height: 98vh;
- 
-=======
-  height: 1000px;
-  padding: 10px;
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .mixedgame {
@@ -228,11 +216,6 @@ a:hover {
   background-repeat: no-repeat;
   height:33%;
   width:100%;
-<<<<<<< HEAD
-=======
-  text-align: center;
-  vertical-align: center;
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .musicroom {
@@ -319,10 +302,7 @@ a:active {
 .gameleader{
   float: right;
   width: 100%;
-<<<<<<< HEAD
   margin-top:30%;
-=======
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .gamescorewrap {
@@ -338,11 +318,7 @@ a:active {
 .gameplayeravi {
   display: inline-block;
   width: 5%;
-<<<<<<< HEAD
   margin-left: -88%;
-=======
-  margin-left: -38%;
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9
 }
 
 .gamescoreheader {
@@ -354,7 +330,6 @@ a:active {
 .gameplayername {
     font-size: 1.2em;
     display: inline-block;
-<<<<<<< HEAD
 }
 
 .gamewinner {
@@ -372,8 +347,3 @@ a:active {
 .gamescore {
   margin-top: 9%;
 }
-=======
-    width: 32%;
-}
-
->>>>>>> 09d5bd902ba08940c5f331fc0510c2403869c1f9

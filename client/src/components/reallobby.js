@@ -2,6 +2,7 @@ import React from 'react'
 import LeaderBoard from './Leaderboard'
 import UserPanel from './UserPanel'
 import GameRoom from './GameRoom'
+import CurrentUsers from './CurrentUsers'
 import socket from '../../socket'
 
 class RealLobby extends React.Component {
@@ -10,24 +11,31 @@ class RealLobby extends React.Component {
     super(props); 
     this.state = {
       users: [], 
+      current: []
     }
   }
 
   componentDidMount () {
     socket.on("getUsers",function(users){
-      this.setState({users:users})
-      console.log("Current Users Online:",users)
+      this.setState({
+        current:users})
+      console.log("Current Users Online:", this.state.current)
     }.bind(this))
-
     socket.emit("inLobby",true)
+    
+   // $.get('/user')
+   //    .then(user => {
+   //      this.name = user.name
+   //      this.avi = user.profileImage
+   //    })
 
     $.get('/score')
     .then(users => {
-      console.log('Got users: ', users);
       this.setState({
        users: users
       })
     })
+
   }
 
   clicked(e){
@@ -43,10 +51,15 @@ class RealLobby extends React.Component {
           <div className="lobbyLabels">
             <div id="users">
             <UserPanel name={this.name} avi={this.avi}/>
+            {this.state.current.map((user, i) => 
+              
+              <CurrentUsers users={user} key={i}/>
+              )
+            } 
             </div>
-          {this.state.users.map((user, i) =>
-              <LeaderBoard user={user} key={i}/>)
-          } 
+            {this.state.users.map((user, i) =>
+                <LeaderBoard user={user} key={i}/>)
+            } 
           </div>
           <GameRoom onClick={this.clicked.bind(this)}/> 
         </div>

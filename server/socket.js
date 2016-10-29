@@ -1,4 +1,5 @@
 var users = require("./controllers/userController")
+const socketio = require('socket.io'
 var connections = []
 var users = []
 var gameData = {

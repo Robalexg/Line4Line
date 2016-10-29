@@ -259,7 +259,8 @@ var startTime = 0;
 
 
 
-module.exports = function (io) {
+module.exports = function (http) {
+  io = socketio.listen(http)
   io.sockets.on("connection",function(socket){
     connections.push(socket)
     console.log(" %s user connected",connections.length);

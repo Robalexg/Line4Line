@@ -37,9 +37,6 @@ module.exports = {
  appSecret : 'your-fb-secret',
  secret : 'your-secret'
 }
-
-
-
 ```
 The `appId` will be a number. `appSecret` and `secret` should be strings. The `secret` can be whatever you want as long as it is a string.
 
@@ -48,7 +45,6 @@ The `appId` will be a number. `appSecret` and `secret` should be strings. The `s
 We recommend creating a folder on your desktop with the name of your db. Then cd to your desktop and run:
 ```
 mongod --dbpath=./your-db-name --port=51707
-
 ```
 
 The `models/config.js` calls for an environment variable that is a pathway to your database. Run this line in the terminal:

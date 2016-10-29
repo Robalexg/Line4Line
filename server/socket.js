@@ -1,3 +1,4 @@
+var users = require("./controllers/userController")
 var connections = []
 var users = []
 var gameData = {
@@ -9,13 +10,23 @@ var gameData = {
         start: 18,
         stop: 28,
         finalStop: 37,
-        c: 'that by working together, we can forge a new path to prosperity',
-        a: 'that the principles upon which our nation were founded shall endure',
-        b: 'that the state of our union is strong',
+        a: 'that by working together, we can forge a new path to prosperity',
+        b: 'that the principles upon which our nation were founded shall endure',
+        c: 'that the state of our union is strong',
         d: 'that we will make America great again',
         correct: 'c'
-      },
-      {
+     },
+     { 
+        title: 'answer',
+        id: 'xWx9zSy04uA',
+        start: 18,
+        stop: 37,
+        a: "",
+        b: "",
+        c: 'that the state of our union is strong',
+        d: ""
+     },
+     {
         title: 'MLK',
         id: '1UV1fs8lAbg',
         start: 732,
@@ -26,8 +37,18 @@ var gameData = {
         c: 'that one day, even the state of Missisippi, a state sweltering with the heat of injustice ... will be transformed into an oasis of freedom and justice',
         d: 'that one day, I will save 15 percent on my car insurance by switiching to Geico',
         correct: 'b'
-      },   
-      {
+     },
+    {
+        title: 'answer',
+        id: '1UV1fs8lAbg',
+        start: 732,
+        stop: 770,
+        a: "",
+        b: 'that one day this nation will rise up and live out the true meaning of its creed',
+        c: "",
+        d: ""
+     },    
+     {
         title: 'Reagan',
         id: 'YtYdjbpBk6A',
         start: 51,
@@ -38,7 +59,19 @@ var gameData = {
         c: 'Show me the money!',
         d: 'Open this gate!',
         correct: 'd'
-      },
+     },
+      {
+         title: 'answer',
+        id: 'YtYdjbpBk6A',
+        start: 51,
+        stop: 73,
+        finalStop: 73,
+        a: "",
+        b: "",
+        c: "",
+        d: 'Open this gate!',
+        correct: 'd'
+     },
       {
         title: 'Bush',
         id: 'EMUPr28v_ao',
@@ -50,8 +83,20 @@ var gameData = {
         c: 'We\'ve had some disagreements',
         d: 'We\'ve lowered taxes',
         correct: 'a'
-      },    
-      {
+     },
+           {
+         title: 'answer',
+        id: 'EMUPr28v_ao',
+        start: 0,
+        stop: 14,
+        finalStop: 14,
+        a: 'We\'ve had some sex',
+        b: '',
+        c: '',
+        d: '',
+        correct: 'a'
+     },      
+     {
         title: 'Lincoln',
         id: '9TCMHVmNc5w',
         start: 6,
@@ -62,20 +107,32 @@ var gameData = {
         c: 'Now we are engaged in a great Civil War',
         d: 'That government of the people, by the people, for the people, shall not perish from this Earth',
         correct: 'c'
-      }
+     },
+      {
+        title: 'answer',
+        id: '9TCMHVmNc5w',
+        start: 6,
+        stop: 28,
+        finalStop: 28,
+        a: '',
+        b: '',
+        c: 'Now we are engaged in a great Civil War',
+        d: '',
+        correct: 'c'
+     }
     ],
     music: [
       {
-        title: 'Spice-Girls',
-        id: 'gJLIiF15wjQ',
-        start: 47,
-        stop: 60,
-        finalStop: 63,
-        a: '..wanna Big Mac, extra pickles',
-        b: '..wanna be my lover, you gotta get with my friends',
-        c: 'really, really, really wanna zigazig ah',
-        d: '..if you wanna get with me, better make it fast',
-        correct: 'c'
+          title: 'Spice-Girls',
+          id: 'gJLIiF15wjQ',
+          start: 47,
+          stop: 60,
+          finalStop: 63,
+          a: '..wanna Big Mac, extra pickles',
+          b: '..wanna be my lover, you gotta get with my friends',
+          c: 'really, really, really wanna zigazig ah',
+          d: '..if you wanna get with me, better make it fast',
+          correct: 'c'
       },
       {
         title: "Thriller",
@@ -92,11 +149,11 @@ var gameData = {
       {
         title: "Mambo No Five",
         id: 'EK_LN3XEcnw',
-        start: 15,
+        start: 3,
         stop: 51,
         finalStop: 53,
-        a: 'A little bit of Rita is all I need',
-        b: 'A little bit of Tina is what I see',
+        a: 'A little bit of Rita\'s all I need',
+        b: 'A little bit of Tina\'s what I see',
         c: 'A little bit of Sandra in the sun',
         d: 'A little bit of Monica in my life',
         correct: 'd'
@@ -105,7 +162,7 @@ var gameData = {
         title: "Shake it off",
         id: 'nfWlot6h_JM',
         start: 0,
-        stop: 40,
+        stop: 41,
         finalStop: 44,    
         a: '\'Cause the haters gonna hate, hate, hate, hate, hate',
         b: '\'Cause the fakers gonna fake, fake, fake, fake, fake',
@@ -115,9 +172,9 @@ var gameData = {
       },
       {
         title: "What I've Done",
-        id:  '8sgycukafqQ',
+        id: '8sgycukafqQ',
         start: 0,
-        stop: 58,
+        stop: 59,
         finalStop: 70,    
         a: 'so let heaven come and wash away what I\'ve done',
         b: 'so let mercy come and wipe away what I\'ve done',
@@ -190,7 +247,15 @@ var gameData = {
     ]
   }
 }
+
+var currentUser = require("./models/currentUsers")
+
+var speechLength = gameData.videos.speech.length
+var speechIndex = 0
 var askedQuestions = {speech:[],music:[],mix:[]}
+var admins = ['10205631268421505']
+var startTime = 0;
+
 
 
 
@@ -201,15 +266,31 @@ module.exports = function (io) {
 
     socket.on("signedIn",function(data){
       var user = {}
+      admins.forEach(function(admin){
+        if(data.id === admin){
+          user.admin = true
+        }
+      })
+
+      if(user['admin']){
+        socket.emit("admin",true)
+      }
       user.name = data.name
       user.avi = data.profileImage
-      users.push(user) 
+      console.log("on",socket.id)
+      var currentUsers = new currentUser({
+        name: user.name,
+        profilePic: user.avi,
+        socketId: socket.id
+      })
+      currentUsers.save()
       updateUsernames()
     })
 
     socket.on("createRoom",function(room){
       console.log(room)
-      socket.join(room)
+      socket.join(room) 
+      socket.emit("roomchange",room)
     })
 
     // socket.on("startGame",function(){
@@ -225,50 +306,96 @@ module.exports = function (io) {
       console.log("Lobby",roomname)
 
     })
-    socket.on("startTime",function (time) {
 
-
-    })
 
 
     socket.on("needQuestion",function(){
       var roomname =  getRoomName(socket)
-      io.to(roomname).emit('question',gameData.videos[roomname][asked(socket)])
+      if(roomname != "lobby"){
+        if(speechIndex === speechLength){
+          io.to(roomname).emit("gameover",true)
+          socket.leave(roomname)
+        } else {
+          io.to(roomname).emit('question',gameData.videos[roomname][speechIndex])
+        }
+      }
     })
 
     socket.on("answer",function(data){
       var roomname =  getRoomName(socket)
-      io.to(roomname).emit('question',gameData.videos[roomname][asked(socket)])
+      console.log("datatime:",data.time,"startTime",startTime)
+      var diff = data.time - startTime;
+      var score = (20000 - diff)/20; 
+      if (diff >= 20000){
+        score = 0;
+      }
+
+      console.log("score:",score)
+    })
+      
+    socket.on("answerOver", function(){
+      var roomname = getRoomName(socket)
+      console.log("answer")
+      setTimeout(function(){
+        speechIndex++
+        io.to(roomname).emit('question',gameData.videos[roomname][speechIndex])
+      }, 1000);
     })
 
+    socket.on("startTimer",function(time){
+      var roomname = getRoomName(socket)
+      startTime = time
+      console.log("notAnswer")
+      speechIndex++
+      setTimeout(function(){
+        io.to(roomname).emit('question',gameData.videos[roomname][speechIndex])
+      }, 20000)
+    })
+
+  
+
     socket.on("disconnect",function (data) {
-      users.splice(users.indexOf(socket.username,1))
-      updateUsernames()
+      console.log("disconnect",socket.id)
+      currentUser.find({'socketId': socket.id}).remove().then(function(e){
+        console.log("deleted user",e)
+      })
+
+      // currentUser.collection.remove()
       connections.splice(connections.indexOf(socket),1)
       console.log(" DISCONNECT: %s sockets connected",connections.length);  
     })
 
     var asked = function(userSocket){
       var roomname =  getRoomName(userSocket)
-      console.log("roomname",roomname)
-      var gameDataLength = gameData.videos[roomname].length
-      var rand = Math.floor(Math.random() * gameDataLength)
 
-      if(askedQuestions[roomname].length === gameDataLength){
-        askedQuestions[roomname] = []
-        io.to(roomname).emit("gameover",true)
-        userSocket.leave(roomname)
-        return ;
-      }else if(askedQuestions[roomname].indexOf(rand) === -1){
-        askedQuestions[roomname].push(rand)
-        return rand;
-      }else{
-        return asked(userSocket)
+      if(roomname != "lobby"){
+        // var gameDataLength = gameData.videos[roomname].length
+        // var rand = Math.floor(Math.random() * gameDataLength)
+        // if(askedQuestions[roomname].length === gameDataLength){
+        //   askedQuestions[roomname] = []
+        //   io.to(roomname).emit("gameover",true)
+        //   userSocket.leave(roomname)
+        //   return asked(userSocket) ;
+        // }else if(askedQuestions[roomname].indexOf(rand) === -1){
+        //   askedQuestions[roomname].push(rand)
+        //   return rand;
+        // }else{
+        //   return asked(userSocket)
+        // }
+      
       }
     }
 
     var updateUsernames =  function() {
-      socket.emit('getUsers', users) 
+      var currentUsers = currentUser.find().then(function(user){
+
+        var blah = user.map(function(x){
+          var user = {name:x.name,profilePic:x.profilePic}
+          return user
+        })
+        socket.emit('getUsers', blah) 
+        console.log(blah)
+      })
     }
 
     var getRoomName = function(socket){

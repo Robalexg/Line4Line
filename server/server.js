@@ -77,7 +77,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.use(session({
-  secret: charles.secret,
+  secret: 'dogs',
   resave: true,
   saveUninitialized: true
 }));

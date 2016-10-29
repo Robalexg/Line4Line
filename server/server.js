@@ -37,8 +37,8 @@ app.use(session({
 }));
 
 passport.use(new FacebookStrategy({
-    clientID          : process.env.appId 
-    clientSecret      : process.env.appSecret 
+    clientID          : process.env.appId, 
+    clientSecret      : process.env.appSecret, 
     callbackURL       : "/auth/facebook/return",
     passReqToCallback : true,
 

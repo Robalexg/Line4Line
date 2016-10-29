@@ -31,7 +31,7 @@ passport.deserializeUser(function (obj, done) {
 
 app.use(session({
     secret: 'foo',
-    store: new MongoStore({ url: 'mongodb://localhost:51707/line4line' }),
+    store: new MongoStore({ url: 'mongodb://heroku_3p151kcj:7rulu53hu64jb1euj339uvtarv@ds137267.mlab.com:37267/heroku_3p151kcj' }),
      resave: true,
   saveUninitialized: true
 }));

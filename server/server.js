@@ -13,9 +13,7 @@ const stories          = require('./controllers/storyController')
 const port             = process.env.PORT || 8081
 var http = require('http').Server(app)
 var io = require('socket.io').listen(http)
-var socket = require("./socket")
 
-socket(io)
 
 
 passport.serializeUser(function (user, done) {
@@ -77,10 +75,9 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.use(session({
-   store: new MongoStore({
-        url: 'mongodb://localhost/test-session'
-    }),
-    secret: 'hello'
+  secret: 'dogs',
+  resave: true,
+  saveUninitialized: true
 }));
 
 app.use(passport.initialize());

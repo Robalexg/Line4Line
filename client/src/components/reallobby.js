@@ -42,7 +42,6 @@ class RealLobby extends React.Component {
     socket.on("roomchange",function room(room) {
       this.setState({route:room})
     }.bind(this))
-
   }
 
   clicked(e){

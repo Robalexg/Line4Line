@@ -1,5 +1,5 @@
 import React from 'react'
-import GameOver from './gameover'
+import GameOver from './GameOver'
 
 const GameWinner = (props) =>{
 

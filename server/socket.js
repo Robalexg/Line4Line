@@ -364,6 +364,7 @@ module.exports = function (io) {
       // currentUser.collection.remove()
       connections.splice(connections.indexOf(socket),1)
       console.log(" DISCONNECT: %s sockets connected",connections.length);  
+      updateUsernames()
     })
 
     var asked = function(userSocket){
@@ -395,7 +396,7 @@ module.exports = function (io) {
           console.log("^^^^^^^^^^^", user)
           return user
         })
-        socket.emit('getUsers', blah) 
+        io.sockets.emit('getUsers', blah) 
         console.log(blah)
       })
     }

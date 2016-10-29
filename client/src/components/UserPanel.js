@@ -11,6 +11,7 @@ const UserPanel= (props) =>{
 	      <div className="currentname"><p className="name">{props.name}</p></div>
 			</div>
 			<div className="loggedin">
+			  Users Online
 	      {props.users.map((user, i) => 
 	        <CurrentUsers users={user} key={i}/>
 	      )} 

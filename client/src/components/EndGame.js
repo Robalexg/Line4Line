@@ -1,6 +1,6 @@
 import React from 'react'
-import GameOver from './gameover'
-import GameWinner from './gamewinner'
+import GameOver from './Gameover'
+import GameWinner from './Gamewinner'
 
 
 class EndGame extends React.Component {

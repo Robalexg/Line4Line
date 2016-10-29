@@ -9,7 +9,6 @@ const path             = require('path')
 const morgan           = require('morgan')
 const router           = require('./routes/routes')
 const User             = require('./models/user')
-const stories          = require('./controllers/storyController')
 const port             = process.env.PORT || 8081
 const charles          = require('./secretsecrets')
 const MongoStore = require('connect-mongo')(session);
@@ -17,7 +16,7 @@ var http = require('http').Server(app)
 var io = require('socket.io').listen(http)
 var socket = require("./socket")
 
-
+socket(io)
 
 passport.serializeUser(function (user, done) {
   console.log(user)

@@ -1,4 +1,3 @@
-const stories = require('../controllers/storyController')
 const users = require('../controllers/userController')
 const router = require('express').Router()
 const path = require('path')
@@ -12,19 +11,13 @@ isAuthed = (req,res,next) => {
 }
 
 //Connect controller methods to their corresponding routes
-router.route('/stories').get(stories.getAllStories)
+
 
 router.route('/user').get(isAuthed, users.get)
 
 router.route('/score').post(isAuthed, users.score)
 
 router.route('/score').get(isAuthed, users.getScores)
-
-router.route('/stories/:id').get(isAuthed, stories.joinStory, stories.getOneStory)
-
-router.route('/stories').post(isAuthed,stories.createStory)
-
-router.route('/stories/:id').put(stories.createNewLine)
 
 router.route('/logout').get((req,res) => {
   req.logout()

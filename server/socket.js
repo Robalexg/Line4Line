@@ -1,4 +1,6 @@
 var users = require("./controllers/userController")
+const currentUser = require('./models/currentUsers')
+
 var connections = []
 var users = []
 var gameData = {

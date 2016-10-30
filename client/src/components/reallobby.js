@@ -71,7 +71,7 @@ class RealLobby extends React.Component {
 
       { 
         this.state.route ?
-        <Game lobbyname={this.state.route}/>
+        <Game lobbyname={this.state.route} admin ={this.state.admin}/>
         :
         <div className='lobby'>
           <div className="lobbyLabels">

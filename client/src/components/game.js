@@ -18,13 +18,16 @@ class Game extends React.Component {
       count: null,
       gameover: false,
       display: "none",
+      adminDisplay:"none",
       startFlag: false,
-      source: ""
+      source: "",
+      score: 0
     }
   }
 
 
   componentDidMount () {
+    console.log(this.props.admin)
     socket.emit('needQuestion')
     socket.on('question',function(question){
       this.setState({
@@ -55,7 +58,17 @@ class Game extends React.Component {
       console.log("started Time")
     })
 
+    socket.on("scoreUpdate", function(data){
+      this.setState({score: data});
+    }.bind(this))
+
     console.log('state!: ', this.state.bind(this));
+
+    if(!this.props.admin){
+      this.setState({adminDisplay:"block"})
+    }
+  
+
   }
   
 
@@ -172,15 +185,18 @@ class Game extends React.Component {
         <audio id="jeopardy" src={this.state.source} autoplay></audio>
         
         <div className="row">
-          <YouTube
-            videoId={this.state.id}
-            onReady={this.onReady.bind(this)}
-            onPause={this.onPause.bind(this)}
-            onEnd={this.onEnd.bind(this)}
-            onStateChange={this.onStateChange.bind(this)}
-            opts={opts}
-          >
-          </YouTube>
+          {
+            <YouTube
+              videoId={this.state.id}
+              onReady={this.onReady.bind(this)}
+              onPause={this.onPause.bind(this)}
+              onEnd={this.onEnd.bind(this)}
+              onStateChange={this.onStateChange.bind(this)}
+              opts={opts}
+            >
+            </YouTube>
+            
+          }
         </div>
 
         <div className="answer-buttons">
@@ -194,6 +210,8 @@ class Game extends React.Component {
             }.bind(this))
           }
         </div>
+        <div className='score-text'><span><h1>Total Score:</h1></span>{this.state.score} </div>
+
       </div>
     )
   }

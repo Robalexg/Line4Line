@@ -1,18 +1,6 @@
 require("css!./stylesheet.css")
 
-html {
-  background-image: url('http://images.all-free-download.com/images/graphiclarge/gorgeous_stage_background_04_hd_picture_169913.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width:100%
-}
 
-body {
-  background-image: url('http://images.all-free-download.com/images/graphiclarge/gorgeous_stage_background_04_hd_picture_169913.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width:100%
-}
 .lobby {
   text-align: left;
   height: 98vh;
@@ -393,3 +381,7 @@ tr:nth-child(even) {
   margin: 0 auto;
 }
 
+.score-text {
+  color: white;
+  font-size: 24px;
+}
